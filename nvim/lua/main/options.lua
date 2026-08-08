@@ -17,7 +17,7 @@ local options = {
   swapfile = false,                                -- creates a swapfile
   termguicolors = true,                            -- set term gui colors (most terminals support this)
   undofile = true,                                 -- enable persistent undo
-  timeoutlen =  500,                               -- time to wait for a mapped sequence to complete (in milliseconds)
+  timeoutlen = 500,                                -- time to wait for a mapped sequence to complete (in milliseconds)
   updatetime = 50,                                 -- faster completion (4000ms default)
   writebackup = false,                             -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                                -- convert tabs to spaces
@@ -54,3 +54,24 @@ vim.cmd('autocmd BufEnter * setlocal formatoptions-=cro')
 
 -- remove status bar
 vim.opt.laststatus = 0
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufFilePost" }, {
+  callback = function()
+    if vim.fn.exists('$TMUX') == 1 then
+      local name = vim.fn.expand('%:t')
+      if name == "" then
+        name = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+      end
+      vim.fn.system({ 'tmux', 'rename-window', name })
+    end
+  end
+})
+
+vim.api.nvim_create_autocmd("VimLeave", {
+  callback = function()
+    if vim.fn.exists('$TMUX') == 1 then
+      local name = vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
+      vim.fn.system({ 'tmux', 'rename-window', name })
+    end
+  end
+})

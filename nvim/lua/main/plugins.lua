@@ -39,6 +39,10 @@ local plugins = {
   { "rafamadriz/friendly-snippets" },
   -- null ls none ls
   "nvimtools/none-ls.nvim",
+  {
+    "jay-babu/mason-null-ls.nvim",
+    dependencies = { "williamboman/mason.nvim", "nvimtools/none-ls.nvim" },
+  },
 
   --  -- typescript
   --  {
@@ -59,14 +63,13 @@ local plugins = {
     }
   },
   'nvim-tree/nvim-web-devicons',
-  'nvim-treesitter/nvim-treesitter',
 
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release -DCMAKE_POLICY_VERSION_MINIMUM=3.5 && cmake --build build --config=Release && cmake --install build' },
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
 
@@ -97,7 +100,6 @@ local plugins = {
     event = "InsertEnter",
     config = true
   },
-  "windwp/nvim-ts-autotag",
   "moll/vim-bbye",
 
   -- comments
@@ -111,26 +113,25 @@ local plugins = {
     end
   },
 
-  --github
-  "tpope/vim-fugitive",
-  {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  },
-
   -- colors
   {
     'deparr/tairiki.nvim',
     lazy = false,
     priority = 1000, -- only necessary if you use tairiki as default theme
   },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
   { 'kepano/flexoki-neovim',            lazy = false,   priority = 1000, name = 'flexoki' },
-  { 'nyoom-engineering/oxocarbon.nvim', lazy = false,   priority = 1000 },
-  { "ellisonleao/gruvbox.nvim",         priority = 1000 },
+  { 'rose-pine/neovim', lazy = false, priority = 1000, name = 'rose-pine' },
 }
 
-local opts = {}
+local opts = {
+  rocks = { enabled = false },
+}
 
 require("lazy").setup(plugins, opts)
