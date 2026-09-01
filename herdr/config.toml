@@ -1,7 +1,7 @@
 onboarding = false
 
 [theme]
-name = "rose-pine"
+name = "dracula"
 
 [ui]
 show_agent_labels_on_pane_borders = true
@@ -16,6 +16,7 @@ prompt_new_tab_name = false
 # set -g mouse on
 mouse_capture = true
 
+agent_panel_sort = "spaces"
 [ui.toast]
 delivery = "herdr"
 
@@ -81,3 +82,4 @@ command = "herdr pane resize --current --direction up --amount 0.03"
 key = "ctrl+alt+shift+right"
 type = "shell"
 command = "herdr pane resize --current --direction right --amount 0.03"
+

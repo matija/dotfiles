@@ -1,0 +1,27 @@
+# Tairiki Light — Ghostty theme
+# Ported from tairiki.nvim (https://github.com/deparr/tairiki.nvim)
+# Palette colors derived from lua/tairiki/palette/light.lua
+
+palette = 0=#dadad2
+palette = 1=#8b1212
+palette = 2=#006d00
+palette = 3=#694e1b
+palette = 4=#005fa4
+palette = 5=#6723aa
+palette = 6=#1a676c
+palette = 7=#001070
+palette = 8=#595959
+palette = 9=#a31515
+palette = 10=#008000
+palette = 11=#7c5c20
+palette = 12=#0070c1
+palette = 13=#7929c8
+palette = 14=#1e797f
+palette = 15=#263485
+
+background = #ffffff
+foreground = #001070
+cursor-color = #001070
+cursor-text = #ffffff
+selection-background = #e8e8e0
+selection-foreground = #001070
