@@ -48,18 +48,9 @@ keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true<cr>", opts) -- f
 keymap("n", "<leader>F", "<cmd>Telescope live_grep<cr>", opts)    -- find string in current working directory as you type
 
 -- git
-keymap("n", "<leader>gj", "<cmd>lua require 'gitsigns'.next_hunk()<cr>", opts)
-keymap("n", "<leader>gk", "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", opts)
-keymap("n", "<leader>gl", "<cmd>lua require 'gitsigns'.blame_line()<cr>", opts)
-keymap("n", "<leader>gp", "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", opts)
-keymap("n", "<leader>gr", "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", opts)
-keymap("n", "<leader>gR", "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", opts)
-keymap("n", "<leader>gs", "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", opts)
-keymap("n", "<leader>gu", "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", opts)
 keymap("n", "<leader>go", "<cmd>Telescope git_status<cr>", opts)
 keymap("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", opts)
 keymap("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", opts)
-keymap("n", "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", opts)
 
 -- clear search highlights
 keymap("n", "<leader>h", ":nohl<CR>", opts)
@@ -96,8 +87,6 @@ keymap("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", opts)
 keymap("n", "<leader>sk", "<cmd>Telescope keymaps<cr>", opts)
 keymap("n", "<leader>st", "<cmd>Telescope help_tags<cr>", opts)        -- list available help tags
 keymap("n", "<leader>ss", "<cmd>Telescope grep_string<cr>", opts)      -- find string under cursor in current working directory
--- keymap("n", "<leader>sf", "<cmd>Telescope flutter commands<cr>", opts)  
-keymap("n", "<leader>sf", "<cmd>Telescope flutter fvm commands<cr>", opts)  -- with fvm
 
 -- register
 keymap("n", "<leader>\"", "<cmd>register<cr>", opts) -- find string under cursor in current working directory
@@ -109,3 +98,17 @@ keymap("n", "<leader>p", "\"_dP", opts)
 keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 keymap("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", opts)
 keymap("n", "<leader>.", "<cmd>luafile %<CR>", opts)
+
+-- pi
+keymap("n", "<leader>aa", "<cmd>Pi<cr>", opts)             -- open / hide chat
+keymap("n", "<leader>ax", "<cmd>PiStop<cr>", opts)         -- close session, kill the pi process
+keymap("n", "<leader>an", "<cmd>PiNewSession<cr>", opts)   -- fresh session, same tab
+keymap("n", "<leader>ap", "<cmd>PiContinue<cr>", opts)     -- continue previous session
+keymap("n", "<leader>ar", "<cmd>PiResume<cr>", opts)       -- pick a past session
+keymap("n", "<leader>ab", "<cmd>PiAbort<cr>", opts)        -- abort the current turn
+keymap("n", "<leader>am", "<cmd>PiSendMention<cr>", opts)  -- mention current file
+keymap("v", "<leader>am", "<cmd>PiSendMention<cr>", opts)  -- mention selection
+keymap("n", "<leader>al", "<cmd>PiToggleLayout<cr>", opts) -- side <-> float
+
+-- hide the chat from inside the prompt without leaving insert mode first
+keymap("i", "<C-q>", "<esc><cmd>Pi<cr>", opts)

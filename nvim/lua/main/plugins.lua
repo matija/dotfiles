@@ -86,8 +86,6 @@ local plugins = {
     end
   },
 
-  { "miversen33/sunglasses.nvim",       config = true },
-
   {
     'akinsho/bufferline.nvim',
     version = "*",
@@ -128,6 +126,17 @@ local plugins = {
 
   { 'kepano/flexoki-neovim',            lazy = false,   priority = 1000, name = 'flexoki' },
   { 'rose-pine/neovim', lazy = false, priority = 1000, name = 'rose-pine' },
+
+  -- ai
+  {
+    "alex35mil/pi.nvim",
+    dependencies = { "HakonHarnes/img-clip.nvim" }, -- optional, clipboard image paste
+    config = function()
+      require("pi").setup({
+        expand_startup_details = false, -- collapse the skills/extensions preamble; Tab expands it
+      })
+    end,
+  },
 }
 
 local opts = {
