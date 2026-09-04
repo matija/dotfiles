@@ -48,6 +48,8 @@ $HOME/.config/ghostty	ghostty
 $HOME/.config/herdr/config.toml	herdr/config.toml
 $HOME/.config/mpv	mpv
 $HOME/.config/nvim	nvim
+$HOME/.claude/themes	claude/themes
+$HOME/.pi/agent/themes	pi/themes
 EOF
 )
 
