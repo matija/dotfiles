@@ -12,8 +12,6 @@
 #     for apps that aren't used on this machine (bash, vim, mpv, ...).
 #   - Dir sources are mirrored (rsync --delete), so files deleted on the
 #     live machine are deleted from the repo too.
-#   - .claude/settings.local.json is synced into the working tree but is
-#     covered by a global gitignore, so it is never committed.
 #
 # Usage:
 #   ./sync.sh            sync + commit
@@ -45,7 +43,6 @@ $HOME/.bashrc	.bashrc
 $HOME/.tmux.conf	.tmux.conf
 $HOME/.vimrc	.vimrc
 $HOME/.vim	.vim
-$HOME/.claude/settings.local.json	.claude/settings.local.json
 $HOME/.config/alacritty	alacritty
 $HOME/.config/ghostty	ghostty
 $HOME/.config/herdr/config.toml	herdr/config.toml
