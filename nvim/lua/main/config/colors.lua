@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme dayowl ]]
+vim.cmd [[ colorscheme nightowl ]]

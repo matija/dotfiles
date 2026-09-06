@@ -50,6 +50,8 @@ $HOME/.config/herdr/dayowl-theme.toml	herdr/dayowl-theme.toml
 $HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
 $HOME/.config/mpv	mpv
 $HOME/.config/nvim	nvim
+$HOME/.agents/AGENTS.md	agents/AGENTS.md
+$HOME/.agents/skills	agents/skills
 $HOME/.claude/themes	claude/themes
 $HOME/.pi/agent/themes	pi/themes
 EOF
