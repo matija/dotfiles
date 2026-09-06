@@ -1,0 +1,30 @@
+# Dayowl — Herdr theme block
+# Ported from mitsuhiko/agent-stuff (themes/dayowl.json)
+# To use this theme, replace the [theme] and [theme.custom] sections in
+# ~/.config/herdr/config.toml with the block below, then run:
+#   herdr server reload-config
+
+[theme]
+# No built-in "dayowl"; use a neutral light base and override every token below.
+name = "catppuccin-latte"
+
+[theme.custom]
+panel_bg      = "#f8f9fa"  # background
+sidebar_bg    = "#f1f4f7"  # customMsgBg
+active_row_bg = "#dcecff"  # selectedBg
+selection_bg  = "#c9e0fb"  # selectedBg, one step stronger
+surface0      = "#eef1f4"  # toolPendingBg
+surface1      = "#e7ebf0"  # between toolPendingBg and borderGray
+surface_dim   = "#ffffff"  # export.cardBg
+overlay0      = "#d8dde3"  # borderGray
+overlay1      = "#8a9199"  # dimGray
+text          = "#5c6166"  # foreground
+subtext0      = "#8a9199"  # dimGray
+accent        = "#ffaa33"  # accent
+red           = "#ea6c6d"
+green         = "#6cbf43"
+yellow        = "#eca944"
+blue          = "#3199e1"
+teal          = "#46ba94"  # cyan
+peach         = "#ffaa33"  # accent
+mauve         = "#9e75c7"  # magenta

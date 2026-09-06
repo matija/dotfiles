@@ -1,0 +1,30 @@
+# Nightowl — Herdr theme block
+# Ported from mitsuhiko/agent-stuff (themes/nightowl.json)
+# To use this theme, replace the [theme] and [theme.custom] sections in
+# ~/.config/herdr/config.toml with the block below, then run:
+#   herdr server reload-config
+
+[theme]
+# No built-in "nightowl"; use a neutral dark base and override every token below.
+name = "one-dark"
+
+[theme.custom]
+panel_bg      = "#011627"  # background
+sidebar_bg    = "#01111d"  # toolPendingBg
+active_row_bg = "#0b2942"  # userMsgBg
+selection_bg  = "#1d3b53"  # thinkingLow, the Night Owl selection colour
+surface0      = "#0b253a"  # toolSuccessBg
+surface1      = "#122d42"  # darkGray
+surface_dim   = "#01111d"  # toolPendingBg
+overlay0      = "#4b6479"  # dimGray
+overlay1      = "#5f7e97"  # gray
+text          = "#d6deeb"  # foreground
+subtext0      = "#5f7e97"  # gray
+accent        = "#80CBC4"  # accent
+red           = "#EF5350"
+green         = "#c5e478"
+yellow        = "#ffcb8b"
+blue          = "#82AAFF"
+teal          = "#7fdbca"  # cyan
+peach         = "#F78C6C"  # syntaxNumber
+mauve         = "#c792ea"  # magenta

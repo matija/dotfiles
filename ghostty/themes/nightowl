@@ -1,0 +1,28 @@
+# Nightowl — Ghostty theme
+# Ported from mitsuhiko/agent-stuff (themes/nightowl.json)
+# Dark theme. Normal colors follow the vars block of the source file.
+# The bright colors come from the original Night Owl terminal palette.
+
+palette = 0=#011627
+palette = 1=#EF5350
+palette = 2=#c5e478
+palette = 3=#ffcb8b
+palette = 4=#82AAFF
+palette = 5=#c792ea
+palette = 6=#7fdbca
+palette = 7=#d6deeb
+palette = 8=#5f7e97
+palette = 9=#EF5350
+palette = 10=#22da6e
+palette = 11=#ffeb95
+palette = 12=#82AAFF
+palette = 13=#c792ea
+palette = 14=#80CBC4
+palette = 15=#ffffff
+
+background = #011627
+foreground = #d6deeb
+cursor-color = #80CBC4
+cursor-text = #011627
+selection-background = #1d3b53
+selection-foreground = #d6deeb

@@ -1,34 +1,33 @@
 onboarding = false
 
 [theme]
-# No built-in "tairiki"; use a neutral dark base and override every token below.
-name = "one-dark"
+# No built-in "dayowl"; use a neutral light base and override every token below.
+name = "catppuccin-latte"
 
-# tairiki.nvim dark palette (deparr/tairiki.nvim, lua/tairiki/palette/dark.lua)
 [theme.custom]
-panel_bg      = "#151515"  # bg
-sidebar_bg    = "#151515"  # bg
-active_row_bg = "#282828"  # bg_light2
-selection_bg  = "#373b41"  # ghostty selection-background
-surface0      = "#1d1f21"  # bg_light
-surface1      = "#282828"  # bg_light2
-surface_dim   = "#101010"  # below bg
-overlay0      = "#3b3f4c"  # bg_light3
-overlay1      = "#696969"  # fg_dark3
-text          = "#c5c8c6"  # fg
-subtext0      = "#969896"  # fg_dark2
-accent        = "#de935f"  # orange
-red           = "#cc6666"
-green         = "#b5bd68"
-yellow        = "#f0c674"
-blue          = "#81a2be"
-teal          = "#7eada7"  # cyan
-peach         = "#de935f"  # orange
-mauve         = "#b294bb"  # purple
+panel_bg      = "#f8f9fa"  # background
+sidebar_bg    = "#f1f4f7"  # customMsgBg
+active_row_bg = "#dcecff"  # selectedBg
+selection_bg  = "#c9e0fb"  # selectedBg, one step stronger
+surface0      = "#eef1f4"  # toolPendingBg
+surface1      = "#e7ebf0"  # between toolPendingBg and borderGray
+surface_dim   = "#ffffff"  # export.cardBg
+overlay0      = "#d8dde3"  # borderGray
+overlay1      = "#8a9199"  # dimGray
+text          = "#5c6166"  # foreground
+subtext0      = "#8a9199"  # dimGray
+accent        = "#ffaa33"  # accent
+red           = "#ea6c6d"
+green         = "#6cbf43"
+yellow        = "#eca944"
+blue          = "#3199e1"
+teal          = "#46ba94"  # cyan
+peach         = "#ffaa33"  # accent
+mauve         = "#9e75c7"  # magenta
 
 [ui]
 show_agent_labels_on_pane_borders = true
-accent = "#de935f"
+accent = "#ffaa33"
 # tmux drew single-line dividers between adjacent panes
 pane_gaps = false
 
