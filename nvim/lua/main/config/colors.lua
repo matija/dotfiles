@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme tairiki-dark ]]
+vim.cmd [[ colorscheme dayowl ]]
