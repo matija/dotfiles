@@ -46,3 +46,17 @@ work if the work is visible.
 
 Follow YAGNI principles, and prefer one-liner solutions. Do not write comments
 in code. Use Simplified Technical English in your writing.
+
+# Commits
+
+Keep the commit message shorter than a Twitter message: 280 characters for the
+subject and the body together.
+
+- Write the subject only. Do not add a body.
+- Add a body only if the user asks for one.
+- Maximum 60 characters for the subject.
+- Do not explain the cause, the effect, or the test results in the commit.
+- Do not put a ticket number in the message. The branch name has it.
+- Write what the change does, in the active voice.
+
+The same rules apply to pull request titles and descriptions.

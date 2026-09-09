@@ -65,24 +65,85 @@ A list of testing decisions that were made. Include:
 
 ## Tasks
 
-A numbered checklist of the work. An agent does the tasks in order. Each task
-must give:
+A checklist of the work. An agent does the tasks in order.
 
-- The action, in one sentence.
-- The files or folders to edit or create.
-- A check that shows the task is complete (a test, a command, or an observable result).
+### Task syntax — follow this exactly
+
+Task tools read this file with a scanner that matches `^- \[[ x]\] `. A task
+written any other way is invisible to them. Obey every rule below.
+
+1. Start every task with `- [ ] ` at column 0. Use a hyphen. Never use an
+   ordered list (`1. [ ]`), never `*` or `+`, never a heading, never a table
+   row, never an indented bullet.
+2. Write the punctuation exactly: hyphen, one space, `[`, one space, `]`, one
+   space. Not `-[ ]`, not `- []`, not `- [ ]` with two spaces.
+3. Put the whole task statement on that one physical line, in bold, and do not
+   wrap it. The line may run past 80 characters. A scanner and a cold agent
+   both read the first line only, so a wrapped statement loses its second half.
+4. Never start the text with a counter. `**1. Add ...**` and `**Task 3:**` are
+   wrong. The renderer already draws the checkbox and the ordering, so a
+   leading `N.` prints as visible clutter beside it.
+5. Give each task a stable handle at the END of the line instead, in the form
+   ` (T1)`, ` (T2)`, and so on, after the closing `**`. This keeps the rendered
+   line clean and still lets the rest of the PRD point at a task.
+6. Refer to a task by its handle in prose: "the placement confirmed by T1".
+   Do not write "task 1" or "the first task".
+7. Make that bold line self-contained. Name the action and the outcome, so an
+   agent can take the task cold without reading the rest of the document.
+8. Indent the `Files` and `Check` sub-bullets by exactly two spaces, and indent
+   their wrapped continuation lines by four.
+9. Put one blank line between tasks.
+10. Use `- [ ]` nowhere else in the PRD. Out of Scope, Further Notes, and the
+   decision sections use plain bullets, so a checkbox count equals the task
+   count.
+
+Each task must give:
+
+- The action and its outcome, on the bold line.
+- The files or folders to edit or create, in a `Files` sub-bullet.
+- A check that proves the task is done, in a `Check` sub-bullet: a test, a
+  command, or an observable result.
 
 <task-example>
-1. [ ] Add the `balance` field to the account schema.
-   - Files: `src/db/schema/accounts.ts`, `src/db/migrations/`
-   - Check: `npm run migrate` succeeds, and the new column exists.
-2. [ ] Show the balance on the account card.
-   - Files: `src/components/AccountCard.tsx`
-   - Check: the test in `src/components/AccountCard.test.tsx` passes.
+- [ ] **Add the `balance` field to the account schema and generate the migration.** (T1)
+  - Files: `src/db/schema/accounts.ts`, `src/db/migrations/`
+  - Check: `npm run migrate` succeeds, and the new column exists.
+
+- [ ] **Show the balance on the account card, formatted with the shared money helper.** (T2)
+  - Files: `src/components/AccountCard.tsx`
+  - Check: the test in `src/components/AccountCard.test.tsx` passes.
 </task-example>
+
+Open the section with a short "How to read this plan" paragraph: how a reader
+takes a task, what the sub-bullets mean, what the `(T1)` handle is for, and
+whether the order is strict.
+
+If the plan has more than about twelve tasks, group them under `###` phase
+headings. Give each phase a **Goal** line and a **Done when** line. Keep the
+`(T1)`, `(T2)` handles running continuously across all phases.
 
 To mark a task complete, change `[ ]` to `[x]` in `PRD.md`. Keep the file as
 the record of progress.
+
+### Verify before you finish
+
+After you write `PRD.md`, run this and confirm the count equals the number of
+tasks you intended:
+
+```sh
+grep -c '^- \[[ x]\] ' PRD.md
+```
+
+Then run both of these. Each must print nothing:
+
+```sh
+grep -n '^[[:space:]]*[0-9]\+\. \[' PRD.md
+grep -n '^- \[[ x]\] \*\*[0-9]' PRD.md
+```
+
+The first hit means you wrote an ordered-list checkbox; convert it to `- [ ]`.
+The second means you put a counter at the start of a task; move it to the end
+as a ` (Tn)` handle.
 
 ## Out of Scope
 
