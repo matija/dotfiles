@@ -1,0 +1,87 @@
+{
+	"$schema": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+	"name": "polar-aurora",
+	"vars": {
+		"cyan": "#71cfd5",
+		"blue": "#71a3e0",
+		"green": "#7bdca9",
+		"red": "#de7d8c",
+		"yellow": "#e2c676",
+		"magenta": "#a28ae7",
+		"gray": "#5c6b80",
+		"dimGray": "#4b586b",
+		"darkGray": "#1e2a38",
+		"accent": "#92eebb",
+		"foreground": "#d8dfe5",
+		"background": "#101318",
+		"userMsgBg": "#1a2532",
+		"toolPendingBg": "#0b0e13",
+		"toolSuccessBg": "#161d25",
+		"toolErrorBg": "#33212a"
+	},
+	"colors": {
+		"accent": "accent",
+		"border": "blue",
+		"borderAccent": "cyan",
+		"borderMuted": "darkGray",
+		"success": "green",
+		"error": "red",
+		"warning": "yellow",
+		"muted": "gray",
+		"dim": "dimGray",
+		"text": "",
+		"thinkingText": "gray",
+
+		"userMessageBg": "userMsgBg",
+		"userMessageText": "",
+		"toolPendingBg": "toolPendingBg",
+		"toolSuccessBg": "toolSuccessBg",
+		"toolErrorBg": "toolErrorBg",
+		"toolTitle": "",
+		"toolOutput": "gray",
+
+		"selectedBg": "darkGray",
+		"customMessageBg": "userMsgBg",
+		"customMessageText": "",
+		"customMessageLabel": "accent",
+
+		"mdHeading": "blue",
+		"mdLink": "cyan",
+		"mdLinkUrl": "dimGray",
+		"mdCode": "accent",
+		"mdCodeBlock": "green",
+		"mdCodeBlockBorder": "gray",
+		"mdQuote": "gray",
+		"mdQuoteBorder": "gray",
+		"mdHr": "gray",
+		"mdListBullet": "accent",
+
+		"toolDiffAdded": "green",
+		"toolDiffRemoved": "red",
+		"toolDiffContext": "gray",
+
+		"syntaxComment": "#66788c",
+		"syntaxKeyword": "magenta",
+		"syntaxFunction": "blue",
+		"syntaxVariable": "cyan",
+		"syntaxString": "#b58ad9",
+		"syntaxNumber": "#e5a178",
+		"syntaxType": "yellow",
+		"syntaxOperator": "cyan",
+		"syntaxPunctuation": "foreground",
+
+		"thinkingOff": "darkGray",
+		"thinkingMinimal": "#1e3a4e",
+		"thinkingLow": "#233446",
+		"thinkingMedium": "#5c6b80",
+		"thinkingHigh": "#8a7fd6",
+		"thinkingXhigh": "#a28ae7",
+
+		"bashMode": "green"
+	},
+	"export": {
+		"pageBg": "background",
+		"cardBg": "#161d25",
+		"infoBg": "userMsgBg"
+	}
+}

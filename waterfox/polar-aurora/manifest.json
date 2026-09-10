@@ -1,0 +1,65 @@
+{
+  "manifest_version": 2,
+  "name": "Polar Aurora",
+  "version": "1.0",
+  "description": "Polar Aurora dark theme.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "polar-aurora@mmc.dotfiles"
+    }
+  },
+  "theme": {
+    "colors": {
+      "frame": "#0b0e13",
+      "frame_inactive": "#0b0e13",
+      "tab_background_text": "#5c6b80",
+      "tab_selected": "#101318",
+      "tab_text": "#d8dfe5",
+      "tab_line": "#92eebb",
+      "tab_loading": "#92eebb",
+      "tab_background_separator": "#1e2a38",
+
+      "toolbar": "#101318",
+      "toolbar_text": "#d8dfe5",
+      "toolbar_top_separator": "#1e2a38",
+      "toolbar_bottom_separator": "#1e2a38",
+      "toolbar_vertical_separator": "#1e2a38",
+
+      "toolbar_field": "#161d25",
+      "toolbar_field_text": "#d8dfe5",
+      "toolbar_field_border": "#1e2a38",
+      "toolbar_field_highlight": "#233446",
+      "toolbar_field_highlight_text": "#f2f6f9",
+      "toolbar_field_focus": "#1a2532",
+      "toolbar_field_text_focus": "#f2f6f9",
+      "toolbar_field_border_focus": "#71a3e0",
+
+      "button_background_hover": "#1a2532",
+      "button_background_active": "#233446",
+
+      "icons": "#d8dfe5",
+      "icons_attention": "#92eebb",
+
+      "popup": "#101318",
+      "popup_text": "#d8dfe5",
+      "popup_border": "#1e2a38",
+      "popup_highlight": "#233446",
+      "popup_highlight_text": "#f2f6f9",
+
+      "sidebar": "#0b0e13",
+      "sidebar_text": "#d8dfe5",
+      "sidebar_border": "#1e2a38",
+      "sidebar_highlight": "#233446",
+      "sidebar_highlight_text": "#f2f6f9",
+
+      "bookmark_text": "#d8dfe5",
+
+      "ntp_background": "#101318",
+      "ntp_text": "#d8dfe5"
+    },
+    "properties": {
+      "color_scheme": "dark",
+      "content_color_scheme": "dark"
+    }
+  }
+}

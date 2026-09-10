@@ -1,0 +1,30 @@
+# Polar Aurora — Herdr theme block
+# Colours sampled from the Polar Aurora swatch in the Herdr appearance panel.
+# To use this theme, replace the [theme] and [theme.custom] sections in
+# ~/.config/herdr/config.toml with the block below, then run:
+#   herdr server reload-config
+
+[theme]
+# No built-in "polar-aurora"; use a neutral dark base and override every token below.
+name = "one-dark"
+
+[theme.custom]
+panel_bg      = "#101318"  # background
+sidebar_bg    = "#0b0e13"  # toolPendingBg
+active_row_bg = "#1a2532"  # userMsgBg
+selection_bg  = "#233446"  # the Polar Aurora selection colour
+surface0      = "#161d25"  # toolSuccessBg
+surface1      = "#1e2a38"  # darkGray
+surface_dim   = "#0b0e13"  # toolPendingBg
+overlay0      = "#4b586b"  # dimGray
+overlay1      = "#5c6b80"  # gray
+text          = "#d8dfe5"  # foreground
+subtext0      = "#5c6b80"  # gray
+accent        = "#92eebb"  # accent
+red           = "#de7d8c"
+green         = "#7bdca9"
+yellow        = "#e2c676"
+blue          = "#71a3e0"
+teal          = "#71cfd5"  # cyan
+peach         = "#e5a178"  # syntaxNumber
+mauve         = "#a28ae7"  # magenta

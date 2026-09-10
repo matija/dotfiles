@@ -4,7 +4,8 @@ syntax on
 filetype indent on
 filetype plugin on
 
-colorscheme monokai
+set termguicolors
+colorscheme polar-aurora
 set guifont=Fira\ Code:h12
 set antialias
 set background=dark

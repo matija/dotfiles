@@ -1,0 +1,19 @@
+{
+  "name": "polar-aurora",
+  "displayName": "Polar Aurora",
+  "description": "Polar Aurora colour theme for VS Code and Cursor.",
+  "version": "1.0.0",
+  "publisher": "mmc",
+  "license": "MIT",
+  "engines": { "vscode": "^1.70.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Polar Aurora",
+        "uiTheme": "vs-dark",
+        "path": "./themes/polar-aurora-color-theme.json"
+      }
+    ]
+  }
+}

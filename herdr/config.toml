@@ -1,33 +1,33 @@
 onboarding = false
 
 [theme]
-# No built-in "nightowl"; use a neutral dark base and override every token below.
+# No built-in "polar-aurora"; use a neutral dark base and override every token below.
 name = "one-dark"
 
 [theme.custom]
-panel_bg      = "#011627"  # background
-sidebar_bg    = "#01111d"  # toolPendingBg
-active_row_bg = "#0b2942"  # userMsgBg
-selection_bg  = "#1d3b53"  # thinkingLow, the Night Owl selection colour
-surface0      = "#0b253a"  # toolSuccessBg
-surface1      = "#122d42"  # darkGray
-surface_dim   = "#01111d"  # toolPendingBg
-overlay0      = "#4b6479"  # dimGray
-overlay1      = "#5f7e97"  # gray
-text          = "#d6deeb"  # foreground
-subtext0      = "#5f7e97"  # gray
-accent        = "#80CBC4"  # accent
-red           = "#EF5350"
-green         = "#c5e478"
-yellow        = "#ffcb8b"
-blue          = "#82AAFF"
-teal          = "#7fdbca"  # cyan
-peach         = "#F78C6C"  # syntaxNumber
-mauve         = "#c792ea"  # magenta
+panel_bg      = "#101318"  # background
+sidebar_bg    = "#0b0e13"  # toolPendingBg
+active_row_bg = "#1a2532"  # userMsgBg
+selection_bg  = "#233446"  # the Polar Aurora selection colour
+surface0      = "#161d25"  # toolSuccessBg
+surface1      = "#1e2a38"  # darkGray
+surface_dim   = "#0b0e13"  # toolPendingBg
+overlay0      = "#4b586b"  # dimGray
+overlay1      = "#5c6b80"  # gray
+text          = "#d8dfe5"  # foreground
+subtext0      = "#5c6b80"  # gray
+accent        = "#92eebb"  # accent
+red           = "#de7d8c"
+green         = "#7bdca9"
+yellow        = "#e2c676"
+blue          = "#71a3e0"
+teal          = "#71cfd5"  # cyan
+peach         = "#e5a178"  # syntaxNumber
+mauve         = "#a28ae7"  # magenta
 
 [ui]
 show_agent_labels_on_pane_borders = true
-accent = "#80CBC4"
+accent = "#92eebb"
 # tmux drew single-line dividers between adjacent panes
 pane_gaps = false
 
