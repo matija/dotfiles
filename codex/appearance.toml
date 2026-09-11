@@ -1,0 +1,4 @@
+[tui]
+theme = "polar-aurora"
+animations = false
+terminal_title = ["project"]

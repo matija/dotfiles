@@ -55,6 +55,7 @@ $HOME/.agents/AGENTS.md	agents/AGENTS.md
 $HOME/.agents/skills	agents/skills
 $HOME/.claude/themes	claude/themes
 $HOME/.pi/agent/themes	pi/themes
+$HOME/.codex/themes	codex/themes
 EOF
 )
 
@@ -99,6 +100,17 @@ while IFS=$'\t' read -r src dest; do
   echo "sync:  $src -> $dest"
   synced=$((synced + 1))
 done <<< "$SYNC_PAIRS"
+
+if [ -f "$HOME/.codex/config.toml" ]; then
+  mkdir -p codex
+  python3 - <<'PY'
+import json, tomllib
+from pathlib import Path
+tui = tomllib.loads((Path.home() / '.codex/config.toml').read_text()).get('tui', {})
+keys = ('theme', 'animations', 'terminal_title')
+Path('codex/appearance.toml').write_text('[tui]\n' + ''.join(f'{key} = {json.dumps(tui[key])}\n' for key in keys if key in tui))
+PY
+fi
 
 echo
 echo "synced $synced source(s), skipped $skipped."
