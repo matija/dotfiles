@@ -51,8 +51,7 @@ $HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
 $HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
 $HOME/.config/mpv	mpv
 $HOME/.config/nvim	nvim
-$HOME/.agents/AGENTS.md	agents/AGENTS.md
-$HOME/.agents/skills	agents/skills
+$HOME/.agents	agents
 $HOME/.claude/themes	claude/themes
 $HOME/.pi/agent/themes	pi/themes
 $HOME/.codex/themes	codex/themes
@@ -60,7 +59,7 @@ EOF
 )
 
 # Junk that is never mirrored into the repo.
-RSYNC_EXCLUDES=(--exclude '.DS_Store' --exclude '.netrwhist' --exclude '.claude' --exclude '*.bak-*')
+RSYNC_EXCLUDES=(--exclude '.DS_Store' --exclude '.netrwhist' --exclude '.claude' --exclude '/undo' --exclude '*.bak-*')
 
 # True if a dir has no entries other than junk (i.e. the app isn't really
 # set up here), so mirroring it would only wipe the repo copy.

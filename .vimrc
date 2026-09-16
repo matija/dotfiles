@@ -1,64 +1,57 @@
 set nocompatible
-filetype on
 syntax on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 set termguicolors
-colorscheme polar-aurora
-set guifont=Fira\ Code:h12
-set antialias
 set background=dark
+colorscheme polar-aurora
+
 set clipboard^=unnamedplus,unnamed
-" let g:syntastic_ruby_exec = '/Users/matija/.rbenv/versions/2.3.4/bin/ruby'
-"let g:syntastic_ruby_mri_exec = '/Users/matija/.rbenv/versions/2.3.4/bin/ruby'
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_ruby_checkers=['mri', 'rubocop']
-"let g:indent_guides_enable_on_vim_startup = 1
-"let g:airline_theme='spacevim'
-set wrap
-set shiftwidth=2
-set tabstop=2
-set expandtab
-set softtabstop=2
-set shiftround
-set autoindent
-set laststatus=2
-set guioptions-=L
-set number
-set cursorline
+set encoding=utf-8
+set nobackup nowritebackup noswapfile
+set undofile undodir=~/.vim/undo
+set hlsearch ignorecase smartcase
+set mouse=a
+set expandtab shiftwidth=2 tabstop=2 softtabstop=2 shiftround autoindent smartindent
+set number relativenumber numberwidth=2
+set cursorline nowrap
+set scrolloff=8 sidescrolloff=8
+set splitbelow splitright
+set timeoutlen=500 updatetime=50
+set laststatus=0
 set lazyredraw
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'dkprice/vim-easygrep'
-Plugin 'junegunn/fzf.vim'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-"Plugin 'wincent/command-t'
-"Plugin 'tpope/vim-rails'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nathanaelkane/vim-indent-guides'
-call vundle#end()
+let mapleader = " "
+let maplocalleader = " "
+nnoremap <Space> <Nop>
 
-set rtp+=/usr/local/opt/fzf
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-"autocmd vimenter * NERDTree
+nnoremap <S-l> :bnext<CR>
+nnoremap <S-h> :bprevious<CR>
 
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+inoremap jk <ESC>
+inoremap jj <ESC>
 
-" start nerdtree when vim is launched with folder as arg
-autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+vnoremap < <gv
+vnoremap > >gv
 
+nnoremap x "_x
+nnoremap <leader>p "_dP
+nnoremap <leader>h :nohl<CR>
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>c :bprevious<bar>bdelete #<CR>
 
-nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>r :Tags<CR>
-"nmap <Leader>sc :SyntasticCheck<CR>
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 25
+nnoremap <leader>e :Lexplore<CR>
 
+nnoremap <leader>f :find *
+nnoremap <leader>bf :buffers<CR>:buffer<Space>
+set path+=**
+set wildmenu
