@@ -4,6 +4,7 @@ onboarding = false
 # No built-in "polar-aurora"; use a neutral dark base and override every token below.
 name = "one-dark"
 
+auto_switch = false
 [theme.custom]
 panel_bg      = "#101318"  # background
 sidebar_bg    = "#0b0e13"  # toolPendingBg
@@ -105,3 +106,6 @@ key = "ctrl+alt+shift+right"
 type = "shell"
 command = "herdr pane resize --current --direction right --amount 0.03"
 
+
+[session]
+resume_agents_on_restore = false
