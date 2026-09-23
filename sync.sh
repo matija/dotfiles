@@ -100,6 +100,11 @@ while IFS=$'\t' read -r src dest; do
   synced=$((synced + 1))
 done <<< "$SYNC_PAIRS"
 
+if [ -f "$HOME/.zshrc" ]; then
+  mkdir -p zsh
+  sed -n -e '/^autoload -Uz vcs_info$/p' -e '/^precmd() { vcs_info; PROMPT=/p' -e "/^zstyle ':vcs_info:git:\*' formats /p" -e '/^unsetopt PROMPT_SUBST$/p' "$HOME/.zshrc" > zsh/prompt.zsh
+fi
+
 if [ -f "$HOME/.codex/config.toml" ]; then
   mkdir -p codex
   python3 - <<'PY'
