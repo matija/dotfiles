@@ -23,7 +23,6 @@ in code.
 # Version control
 
 Use normal Git for this repository. Push directly to `master`.
-Do not initialize GitButler or create GitButler branches.
 
 # Commits
 
