@@ -20,6 +20,11 @@ work if the work is visible.
 Follow YAGNI principles, and prefer one-liner solutions. Do not write comments
 in code.
 
+# Version control
+
+Use normal Git for this repository. Push directly to `master`.
+Do not initialize GitButler or create GitButler branches.
+
 # Commits
 
 Keep the commit message shorter than a Twitter message: 280 characters for the
