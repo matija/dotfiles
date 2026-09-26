@@ -1,14 +1,3 @@
-## Words and phrases to avoid
-
-Do not use jargon, metaphor, or slang. These words are forbidden:
-
-- seam, load-bearing, sharp edge, first-class, surface (as a verb), flag
-- "that hits", "lands", "ships", "earns its place", "pays for itself"
-- "the real X here is", "what makes this work is", "at its core"
-- deep dive, unpack, leverage, robust, elegant, powerful, seamless
-- "not just X, but Y", "it's worth noting that", "here's the thing"
-- latent, sentinel
-
 ## Length
 
 Be concise. Give the answer first. Add detail only if the user needs it to
