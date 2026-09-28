@@ -1,3 +1,8 @@
+---
+description: Global writing, code, and commit rules
+alwaysApply: true
+---
+
 ## Length
 
 Be concise. Give the answer first. Add detail only if the user needs it to
@@ -30,4 +35,3 @@ subject and the body together.
 - Write what the change does, in the active voice.
 
 The same rules apply to pull request titles and descriptions.
-

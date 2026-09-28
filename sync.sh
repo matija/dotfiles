@@ -52,6 +52,7 @@ $HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
 $HOME/.config/mpv	mpv
 $HOME/.config/nvim	nvim
 $HOME/.agents	agents
+$HOME/.cursor/rules	cursor/rules
 $HOME/.claude/themes	claude/themes
 $HOME/.pi/agent/themes	pi/themes
 $HOME/.codex/themes	codex/themes
