@@ -4,6 +4,7 @@ import { transcript } from "./transcript.ts";
 import { UsageLedger, type UsageRecord } from "./usage.ts";
 import { KEY, ObserverUI } from "./ui.ts";
 import { registerChat } from "./chat.ts";
+import { TEST_TRANSCRIPT } from "./test-scenario.ts";
 
 export default function youShouldKnow(pi: ExtensionAPI) {
 	let enabled = true, threshold = 0.85, note = "", previous = "", lastSource = "", lastStarted = 0, warned = "", runCancelled = false;
@@ -45,10 +46,10 @@ export default function youShouldKnow(pi: ExtensionAPI) {
 		}
 		ui = new ObserverUI(ctx, ledger); ui.footer(); await display(ctx);
 	};
-	const review = (ctx: ExtensionContext, final = false, assistant?: { content?: unknown }): Promise<void> | undefined => {
-		if (!enabled || runCancelled || ctx.signal?.aborted) return;
+	const review = (ctx: ExtensionContext, final = false, assistant?: { content?: unknown }, testSource?: string): Promise<void> | undefined => {
+		if (!enabled || (!testSource && runCancelled) || ctx.signal?.aborted) return;
 		if (pending || (!final && Date.now() - lastStarted < 30_000)) return pending;
-		const source = transcript(ctx, assistant);
+		const source = testSource ?? transcript(ctx, assistant);
 		if (!source || source === lastSource) return;
 		lastSource = source; lastStarted = Date.now();
 		const request = new AbortController(), version = epoch, screen = view(ctx);
@@ -65,19 +66,23 @@ export default function youShouldKnow(pi: ExtensionAPI) {
 		const timer = setTimeout(() => request.abort(), 40_000);
 		pending = (async () => {
 			try {
-				const operation = reviewTranscript(ctx, source, previous, threshold, request.signal, usage, waiting,
+				const operation = reviewTranscript(ctx, source, testSource ? "" : previous, testSource ? 0.85 : threshold, request.signal, usage, waiting,
 					() => screen.note("Reviewing a possible issue", () => controller === request && !request.signal.aborted, true));
 				const result = await Promise.race([operation, interrupted]);
-				if (!result || request.signal.aborted || controller !== request) return;
+				if (!result || request.signal.aborted || controller !== request) {
+					if (testSource && controller === request) ctx.ui.notify("YSK test cancelled or timed out; no warning was fabricated.", "warning");
+					return;
+				}
 				const { probability, confidence, category, model } = result.decision;
-				pi.appendEntry(`${KEY}-review`, { probability, confidence, category, model, threshold });
-				note = result.note === previous ? "" : result.note;
-				if (note) previous = note;
+				pi.appendEntry(`${KEY}-review`, { probability, confidence, category, model, threshold: testSource ? 0.85 : threshold, test: !!testSource });
+				note = !testSource && result.note === previous ? "" : result.note;
+				if (note && !testSource) previous = note;
+				if (testSource) ctx.ui.notify(`YSK live test: Jev P(warn)=${probability.toFixed(3)}, threshold=0.85; ${probability < 0.85 ? "gate declined; Luna not called" : note ? "Luna produced a warning" : "Luna declined to warn"}.`, note ? "info" : "warning");
 				issueId = note ? crypto.randomUUID() : ""; issueSource = note ? source : "";
 				pi.appendEntry(`${KEY}-note`, { note, previous, id: issueId, source: issueSource }); await display(ctx);
 			} catch (error) {
 				if (request.signal.aborted || controller !== request) return;
-				const message = error instanceof Error && /^(TYPESAFE_API_KEY|YSK is|Jev HTTP|Jev returned|openai\/gpt-6-luna|Luna failed)/.test(error.message)
+				const message = error instanceof Error && /^(TYPESAFE_API_KEY|YSK is|Jev HTTP|Jev returned|openai-codex\/gpt-6-luna|Luna failed)/.test(error.message)
 					? error.message : "YSK request failed; no fallback or retry was attempted.";
 				if (message !== warned) { warned = message; ctx.ui.notify(message, "warning"); }
 			} finally {
@@ -98,6 +103,16 @@ export default function youShouldKnow(pi: ExtensionAPI) {
 			if (!enabled) { note = ""; issueId = ""; issueSource = ""; chat.close(); }
 			pi.appendEntry(`${KEY}-state`, { enabled, threshold });
 			pi.appendEntry(`${KEY}-note`, { note, previous, id: issueId, source: issueSource }); view(ctx).footer(); await display(ctx);
+		},
+	});
+	pi.registerCommand("ysk-test", {
+		description: "Live Jev/Luna test using a failed-test transcript; uses paid provider requests, not project files.",
+		handler: async (_args, ctx) => {
+			if (!enabled) { ctx.ui.notify("Run /ysk on before /ysk-test.", "warning"); return; }
+			if (!ctx.isIdle() || pending) { ctx.ui.notify("Wait for the agent and observer to finish before /ysk-test.", "warning"); return; }
+			ctx.ui.notify("Testing real Jev and subscription Luna against a synthetic failed-test transcript. No project files are read or changed. Any resulting YSK warning refers only to this fixture.", "info");
+			lastSource = ""; warned = "";
+			await review(ctx, true, undefined, TEST_TRANSCRIPT);
 		},
 	});
 	pi.on("session_start", restore);
