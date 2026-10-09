@@ -129,8 +129,9 @@ local plugins = {
 
   -- ai
   {
-    "pablopunk/pi.nvim",
-    opts = {},
+    "alex35mil/pi.nvim",
+    dependencies = { "HakonHarnes/img-clip.nvim" },
+    opts = { expand_startup_details = false },
   },
 }
 
