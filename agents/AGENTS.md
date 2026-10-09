@@ -9,6 +9,12 @@ if work is visible.
 Follow YAGNI principles, and prefer one-liner solutions. Do not write comments
 in code.
 
+# Tests
+
+Add tests only when the user explicitly requests them, and only for behavior
+not already covered by existing tests. Remove temporary tests created for your
+own checks before committing or pushing.
+
 # Browser checks
 
 Use installed Helium browser for visual checks of websites. Check desktop 
