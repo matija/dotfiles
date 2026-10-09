@@ -9,7 +9,6 @@ Each skill has one summary and its source repository.
 | `grill-me` | Tests a plan through detailed, sequential questions. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `grill-with-docs` | Tests a plan against project terms and decisions, then updates the documents. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `handoff` | Creates a concise handoff document for another agent. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
-| `impeccable` | Designs, reviews, and improves frontend interfaces. Source: [pbakaus/impeccable](https://github.com/pbakaus/impeccable). |
 | `improve-codebase-architecture` | Finds architecture improvements that reduce interfaces and consolidate related code. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `retro` | Reviews a coding session and recommends improvements to the agent environment. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `show-me` | Explains a topic with concise diagrams and focused HTML files. Source: [humanlayer/skills](https://github.com/humanlayer/skills). |

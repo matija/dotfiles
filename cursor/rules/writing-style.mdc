@@ -20,6 +20,9 @@ Use the installed Helium browser for visual checks. Never install Playwright or 
 
 # Version control
 
+This section applies only to projects under `~/dev/priv`. Elsewhere, follow
+the repository's own branching rules.
+
 Use normal Git for this repository. Push directly to `master`.
 
 # Commits

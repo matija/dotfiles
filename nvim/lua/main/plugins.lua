@@ -129,13 +129,8 @@ local plugins = {
 
   -- ai
   {
-    "alex35mil/pi.nvim",
-    dependencies = { "HakonHarnes/img-clip.nvim" }, -- optional, clipboard image paste
-    config = function()
-      require("pi").setup({
-        expand_startup_details = false, -- collapse the skills/extensions preamble; Tab expands it
-      })
-    end,
+    "pablopunk/pi.nvim",
+    opts = {},
   },
 }
 

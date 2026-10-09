@@ -11,11 +11,11 @@ Issue tracking done as tasks inside PRD.md.
 
 1. Explore the repo to understand the current state of the codebase, if you haven't already. Use the project's domain glossary vocabulary throughout the PRD, and respect any ADRs in the area you're touching.
 
-2. Decide where you connect the tests to the feature. Prefer the places where tests already connect. Connect at the highest level that you can. If you need a new place, propose it at the highest level possible.
+2. Inspect historical PRDs and the task runner's context contract when available. For Loopfleet, treat only the checkbox's first physical line as available to the executing agent. The full PRD, headings, and indented details are not guaranteed execution context.
 
-Check with the user that these places match their expectations.
+3. Choose existing test locations at the highest practical level. Specify the locations and checks directly in each task line. Resolve routine implementation choices in the plan. If a product decision genuinely blocks implementation, ask the user before delivering the executable task list; never make obtaining confirmation an implementation task.
 
-3. Write the PRD to `PRD.md` in the project root, with the template below. Do not open issues in GitHub or Jira. The task list in `PRD.md` is the only issue tracker for this PRD.
+4. Write the PRD to `PRD.md` in the project root, with the template below. Do not open issues in GitHub or Jira. The task list in `PRD.md` is the only issue tracker for this PRD. Preserve the repository's ignore rules. An ignored PRD is valid; Git tracking is not a prerequisite for task execution.
 
 <prd-template>
 
@@ -88,8 +88,19 @@ written any other way is invisible to them. Obey every rule below.
    line clean and still lets the rest of the PRD point at a task.
 6. Refer to a task by its handle in prose: "the placement confirmed by T1".
    Do not write "task 1" or "the first task".
-7. Make that bold line self-contained. Name the action and the outcome, so an
-   agent can take the task cold without reading the rest of the document.
+7. Make that first physical line an executable specification: action, file paths,
+   interfaces, behavior, necessary constants and limits, security constraints,
+   and observable completion checks. Include relevant text after the bold span
+   on the SAME physical line if needed. An agent must implement the task from
+   that line plus repository inspection alone. References to other PRD sections,
+   proposals, or task handles cannot substitute for requirements. Dependencies
+   must name the concrete capability to reuse, not merely its task handle.
+   Scope each task to one small deliverable plus its focused tests, suitable for
+   a single agent pass. Split transport, credential storage, app lifecycle,
+   API commands, and UI into separate tasks rather than bundling a feature.
+   A self-contained line can still be oversized: shrink the deliverable, not
+   its specification. Failed runs are not assumed resumable; every task starts
+   from previously accepted repository state, not a failed worktree.
 8. Indent the `Files` and `Check` sub-bullets by exactly two spaces, and indent
    their wrapped continuation lines by four.
 9. Put one blank line between tasks.
@@ -97,19 +108,17 @@ written any other way is invisible to them. Obey every rule below.
    decision sections use plain bullets, so a checkbox count equals the task
    count.
 
-Each task must give:
-
-- The action and its outcome, on the bold line.
-- The files or folders to edit or create, in a `Files` sub-bullet.
-- A check that proves the task is done, in a `Check` sub-bullet: a test, a
-  command, or an observable result.
+Each task's first physical line must contain the implementation requirements,
+file paths, and completion check. The `Files` and `Check` sub-bullets are human
+reading aids that repeat those details; they are not a place for additional
+requirements. Preserve a stable bold imperative for Loopfleet's task identity.
 
 <task-example>
-- [ ] **Add the `balance` field to the account schema and generate the migration.** (T1)
+- [ ] **Add a required integer `balance` field defaulting to zero to the account schema in `src/db/schema/accounts.ts` and generate a migration in `src/db/migrations/`; verify `npm run migrate` succeeds and existing accounts have zero balance.** (T1)
   - Files: `src/db/schema/accounts.ts`, `src/db/migrations/`
   - Check: `npm run migrate` succeeds, and the new column exists.
 
-- [ ] **Show the balance on the account card, formatted with the shared money helper.** (T2)
+- [ ] **Show the account's integer `balance` on the card in `src/components/AccountCard.tsx`, formatted with the existing shared money helper; add cases for zero, positive, and negative balances in `src/components/AccountCard.test.tsx` and verify they pass.** (T2)
   - Files: `src/components/AccountCard.tsx`
   - Check: the test in `src/components/AccountCard.test.tsx` passes.
 </task-example>
@@ -126,6 +135,24 @@ To mark a task complete, change `[ ]` to `[x]` in `PRD.md`. Keep the file as
 the record of progress.
 
 ### Verify before you finish
+
+Perform a mandatory **task-only cold read** before delivering the PRD:
+
+```sh
+grep '^- \[[ x]\] ' PRD.md
+```
+
+Read only this output, as the executing agent would. For EVERY task, verify:
+
+- The line names edit locations, required behavior, and a completion check.
+- Constants, limits, interfaces, and safety rules needed for that task are explicit.
+- Repository inspection can resolve the remaining implementation choices.
+- The agent does not need missing proposals, other PRD sections, sub-bullets, or user confirmation.
+
+Rewrite every failing line. A parser-compatible checkbox count alone is not
+proof that a plan is executable. Report formatting and task-only checks
+separately. When investigating failed runs, inspect the actual supplied context
+before blaming Git tracking or changing ignore rules.
 
 After you write `PRD.md`, run this and confirm the count equals the number of
 tasks you intended:

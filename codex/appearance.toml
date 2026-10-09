@@ -1,4 +1,4 @@
 [tui]
-theme = "nightowl"
+theme = "polar-aurora"
 animations = false
 terminal_title = ["project"]

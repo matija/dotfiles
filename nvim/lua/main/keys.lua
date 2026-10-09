@@ -99,16 +99,7 @@ keymap("n", "<leader>/", "<Plug>(comment_toggle_linewise_current)", opts)
 keymap("v", "<leader>/", "<Plug>(comment_toggle_linewise_visual)", opts)
 keymap("n", "<leader>.", "<cmd>luafile %<CR>", opts)
 
--- pi
-keymap("n", "<leader>aa", "<cmd>Pi<cr>", opts)             -- open / hide chat
-keymap("n", "<leader>ax", "<cmd>PiStop<cr>", opts)         -- close session, kill the pi process
-keymap("n", "<leader>an", "<cmd>PiNewSession<cr>", opts)   -- fresh session, same tab
-keymap("n", "<leader>ap", "<cmd>PiContinue<cr>", opts)     -- continue previous session
-keymap("n", "<leader>ar", "<cmd>PiResume<cr>", opts)       -- pick a past session
-keymap("n", "<leader>ab", "<cmd>PiAbort<cr>", opts)        -- abort the current turn
-keymap("n", "<leader>am", "<cmd>PiSendMention<cr>", opts)  -- mention current file
-keymap("v", "<leader>am", "<cmd>PiSendMention<cr>", opts)  -- mention selection
-keymap("n", "<leader>al", "<cmd>PiToggleLayout<cr>", opts) -- side <-> float
-
--- hide the chat from inside the prompt without leaving insert mode first
-keymap("i", "<C-q>", "<esc><cmd>Pi<cr>", opts)
+vim.keymap.set("n", "<leader>aa", "<cmd>PiAsk<cr>", { desc = "Ask pi" })
+vim.keymap.set("v", "<leader>aa", ":PiAskSelection<cr>", { desc = "Ask pi (selection)" })
+vim.keymap.set("n", "<leader>ax", "<cmd>PiCancel<cr>", { desc = "Cancel pi" })
+vim.keymap.set("n", "<leader>al", "<cmd>PiLog<cr>", { desc = "Pi session log" })
