@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme polar-aurora ]]
+vim.cmd [[ colorscheme nightowl ]]

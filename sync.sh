@@ -60,7 +60,7 @@ EOF
 )
 
 # Junk that is never mirrored into the repo.
-RSYNC_EXCLUDES=(--exclude '.DS_Store' --exclude '.netrwhist' --exclude '.claude' --exclude '/undo' --exclude '*.bak-*')
+RSYNC_EXCLUDES=(--exclude '.DS_Store' --exclude '.netrwhist' --exclude '.claude' --exclude '/undo' --exclude '*.bak-*' --exclude '/mcp.json' --exclude '__pycache__')
 
 # True if a dir has no entries other than junk (i.e. the app isn't really
 # set up here), so mirroring it would only wipe the repo copy.
