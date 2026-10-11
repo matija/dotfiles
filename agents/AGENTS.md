@@ -17,17 +17,9 @@ own checks before committing or pushing.
 
 # Browser checks
 
-Use installed Helium browser for visual checks of websites. Check desktop 
+Use Ego Lite for browser testing and visual checks of websites. Read
+`~/.agents/skills/ego-browser/SKILL.md` before browser work. Check desktop
 applications in their native app. Never install Playwright or its browser binaries.
-
-# Background processes
-
-Track every background process you start for a task. Stop it as soon as its
-purpose is complete, and verify it exited before ending your turn. After an
-interruption or change of direction, clean up processes from the abandoned
-work when you resume. Leave a process running only when the user explicitly
-asks for it, and report what is running and why. Preserve pre-existing user
-processes.
 
 # Version control
 
