@@ -9,7 +9,7 @@
 #   - Missing sources are skipped; the repo copy is left untouched.
 #   - Dirs that only contain junk (.DS_Store, .netrwhist, .claude) are
 #     treated as "not installed here" and skipped. This protects configs
-#     for apps that aren't used on this machine (bash, vim, mpv, ...).
+#     for apps that aren't used on this machine.
 #   - Dir sources are mirrored (rsync --delete), so files deleted on the
 #     live machine are deleted from the repo too.
 #
@@ -41,15 +41,12 @@ SYNC_PAIRS=$(
   cat <<EOF
 $HOME/.bashrc	.bashrc
 $HOME/.tmux.conf	.tmux.conf
-$HOME/.vimrc	.vimrc
-$HOME/.vim	.vim
 $HOME/.config/alacritty	alacritty
 $HOME/.config/ghostty	ghostty
 $HOME/.config/herdr/config.toml	herdr/config.toml
 $HOME/.config/herdr/dayowl-theme.toml	herdr/dayowl-theme.toml
 $HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
 $HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
-$HOME/.config/mpv	mpv
 $HOME/.config/nvim	nvim
 $HOME/.agents	agents
 $HOME/.cursor/rules	cursor/rules
