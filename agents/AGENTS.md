@@ -20,6 +20,11 @@ own checks before committing or pushing.
 Use Ego Lite for browser testing and visual checks of websites. Read
 `~/.agents/skills/ego-browser/SKILL.md` before browser work. Check desktop
 applications in their native app. Never install Playwright or its browser binaries.
+When done using Ego, kill it.
+
+# Running processes and tools
+
+If you start a process to check up on something, you need to kill the process after you are done.
 
 # Version control
 
