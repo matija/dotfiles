@@ -8,15 +8,15 @@
 		"red": "#de7d8c",
 		"yellow": "#e2c676",
 		"magenta": "#a28ae7",
-		"gray": "#5c6b80",
-		"dimGray": "#4b586b",
-		"darkGray": "#1e2a38",
+		"gray": "#777777",
+		"dimGray": "#666666",
+		"darkGray": "#303030",
 		"accent": "#92eebb",
-		"foreground": "#d8dfe5",
-		"background": "#101318",
-		"userMsgBg": "#1a2532",
-		"toolPendingBg": "#0b0e13",
-		"toolSuccessBg": "#161d25",
+		"foreground": "#dedede",
+		"background": "#181818",
+		"userMsgBg": "#282828",
+		"toolPendingBg": "#121212",
+		"toolSuccessBg": "#202020",
 		"toolErrorBg": "#33212a"
 	},
 	"colors": {
@@ -60,7 +60,7 @@
 		"toolDiffRemoved": "red",
 		"toolDiffContext": "gray",
 
-		"syntaxComment": "#66788c",
+		"syntaxComment": "#858585",
 		"syntaxKeyword": "magenta",
 		"syntaxFunction": "blue",
 		"syntaxVariable": "cyan",
@@ -71,9 +71,9 @@
 		"syntaxPunctuation": "foreground",
 
 		"thinkingOff": "darkGray",
-		"thinkingMinimal": "#1e3a4e",
-		"thinkingLow": "#233446",
-		"thinkingMedium": "#5c6b80",
+		"thinkingMinimal": "#414141",
+		"thinkingLow": "#383838",
+		"thinkingMedium": "#777777",
 		"thinkingHigh": "#8a7fd6",
 		"thinkingXhigh": "#a28ae7",
 
@@ -81,7 +81,7 @@
 	},
 	"export": {
 		"pageBg": "background",
-		"cardBg": "#161d25",
+		"cardBg": "#202020",
 		"infoBg": "userMsgBg"
 	}
 }

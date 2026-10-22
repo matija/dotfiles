@@ -94,6 +94,10 @@ $HOME/.config/herdr/dayowl-theme.toml	herdr/dayowl-theme.toml
 $HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
 $HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
 $HOME/.config/nvim	nvim
+$HOME/.vimrc	vim/vimrc
+$HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim
+$HOME/.vscode/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	vscode/polar-aurora/themes/polar-aurora-color-theme.json
+$HOME/.cursor/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	cursor/polar-aurora/themes/polar-aurora-color-theme.json
 $HOME/.config/opencode/cli.json	opencode/cli.json
 $HOME/.config/opencode/themes	opencode/themes
 $HOME/.agents	agents
@@ -156,11 +160,31 @@ if [ -f "$HOME/.codex/config.toml" ]; then
   python3 - <<'PY'
 import json, tomllib
 from pathlib import Path
-tui = tomllib.loads((Path.home() / '.codex/config.toml').read_text()).get('tui', {})
+config = tomllib.loads((Path.home() / '.codex/config.toml').read_text())
+tui = config.get('tui', {})
 keys = ('theme', 'animations', 'terminal_title')
-Path('codex/appearance.toml').write_text('[tui]\n' + ''.join(f'{key} = {json.dumps(tui[key])}\n' for key in keys if key in tui))
+appearance = '[tui]\n' + ''.join(f'{key} = {json.dumps(tui[key])}\n' for key in keys if key in tui)
+dark = config.get('desktop', {}).get('appearanceDarkChromeTheme', {})
+if dark:
+    appearance += '\n[desktop.appearanceDarkChromeTheme]\n' + ''.join(f'{key} = {json.dumps(dark[key])}\n' for key in ('accent', 'accentSource', 'contrast', 'ink', 'opaqueWindows', 'surface') if key in dark)
+Path('codex/appearance.toml').write_text(appearance)
 PY
 fi
+
+python3 - <<'PY'
+import json, re
+from pathlib import Path
+for app, dest in (('Code', 'vscode'), ('Cursor', 'cursor')):
+    source = Path.home() / 'Library/Application Support' / app / 'User/settings.json'
+    if source.exists():
+        settings = {}
+        for key in ('window.autoDetectColorScheme', 'workbench.colorTheme', 'workbench.preferredLightColorTheme', 'workbench.preferredDarkColorTheme'):
+            match = re.search(r'"' + re.escape(key) + r'"\s*:\s*("(?:[^"\\]|\\.)*"|true|false)', source.read_text())
+            if match:
+                settings[key] = json.loads(match[1])
+        Path(dest).mkdir(exist_ok=True)
+        Path(dest, 'appearance.json').write_text(json.dumps(settings, indent=2) + '\n')
+PY
 
 echo
 echo "synced $synced source(s), skipped $skipped."

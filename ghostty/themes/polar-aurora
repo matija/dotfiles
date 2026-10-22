@@ -1,26 +1,25 @@
 # Polar Aurora — Ghostty theme
-# Colours sampled from the Polar Aurora swatch in the Herdr appearance panel.
 
-palette = 0=#101318
+palette = 0=#181818
 palette = 1=#de7d8c
 palette = 2=#7bdca9
 palette = 3=#e2c676
 palette = 4=#71a3e0
 palette = 5=#a28ae7
 palette = 6=#71cfd5
-palette = 7=#d8dfe5
-palette = 8=#5c6b80
+palette = 7=#dedede
+palette = 8=#777777
 palette = 9=#ea94a1
 palette = 10=#92eebb
 palette = 11=#ecd58f
 palette = 12=#8bb5e9
 palette = 13=#b6a2ee
 palette = 14=#8adde2
-palette = 15=#f2f6f9
+palette = 15=#f5f5f5
 
-background = #101318
-foreground = #d8dfe5
+background = #181818
+foreground = #dedede
 cursor-color = #92eebb
-cursor-text = #101318
-selection-background = #233446
-selection-foreground = #d8dfe5
+cursor-text = #181818
+selection-background = #383838
+selection-foreground = #dedede

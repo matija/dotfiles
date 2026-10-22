@@ -2,3 +2,11 @@
 theme = "polar-aurora"
 animations = false
 terminal_title = ["project"]
+
+[desktop.appearanceDarkChromeTheme]
+accent = "#92eebb"
+accentSource = "custom"
+contrast = 45
+ink = "#dedede"
+opaqueWindows = false
+surface = "#181818"
