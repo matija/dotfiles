@@ -1,40 +1,40 @@
-## Length
+# AGENTS.md
 
-Be concise. Give answer first. Add detail only if user needs it to
-make decision. Do not repeat what user said. Do not summarize your work 
-if work is visible.
+## Coding
 
-# Code
+Follow YAGNI principles.
 
-Follow YAGNI principles, and prefer one-liner solutions. Do not write comments
-in code.
+When deleting code, leave no vestigial traces, whale legs, or references to the old implementation.
 
-# Tests
+Never write a new unit test or integration test unless explicitly instructed. You may write new e2e or system level tests.
 
-Add tests only when the user explicitly requests them, and only for behavior
-not already covered by existing tests. Remove temporary tests created for your
-own checks before committing or pushing.
+Never add new code comments.
 
-# Browser checks
+Rather than dirty up the present working directory, put "temporary" work files in ./tmp if it exists or /tmp if it does not.
+
+## Autonomy
+
+Within the task I gave you, keep going: fix, retry, and take the next in-scope step yourself. Commit locally as you finish each logical unit, staging only files you changed. Ask before outward-facing actions I haven't requested, such as push, publish, deploy, messaging other people, or irreversible deletes.
+
+End any turn that reports on long-running or delegated work with a short status: **Goal**, **Done**, **Next**, **Needs you** (or "nothing").
+
+## Browser checks
 
 Use Ego Lite for browser testing and visual checks of websites. Read
 `~/.agents/skills/ego-browser/SKILL.md` before browser work. Check desktop
 applications in their native app. Never install Playwright or its browser binaries.
 When done using Ego, kill it.
 
-# Running processes and tools
+## Running processes and tools
 
-If you start a process to check up on something, you need to kill the process after you are done.
+When starting external processes, don't leave them running when you're done.
 
-# Version control
+## Version control
 
-This section applies only to projects under `~/dev/priv`. Elsewhere, follow
-the repository's own branching rules.
-
-Use normal Git. Push directly to the repository's existing default branch
+For projects under `~/dev/priv` push directly to the repository's existing default branch
 (`main` or `master`).
 
-# Commits
+## Commits
 
 Keep commit message shorter than Twitter message: 280 characters for 
 subject and body together.

@@ -4,9 +4,9 @@ animations = false
 terminal_title = ["project"]
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#92eebb"
+accent = "#0169cc"
 accentSource = "custom"
 contrast = 45
-ink = "#dedede"
+ink = "#fcfcfc"
 opaqueWindows = false
-surface = "#181818"
+surface = "#111111"

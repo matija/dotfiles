@@ -86,6 +86,15 @@
       "pluginName": "mattpocock-skills",
       "installedAt": "2026-09-16T12:16:25.438Z",
       "updatedAt": "2026-09-16T12:16:25.438Z"
+    },
+    "security-audit": {
+      "source": "cloudflare/security-audit-skill",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cloudflare/security-audit-skill.git",
+      "skillPath": "skills/security-audit/SKILL.md",
+      "skillFolderHash": "ccbc33ed119b28c3ef7b44a7e2081ab191ad63af",
+      "installedAt": "2026-10-22T07:48:17.657Z",
+      "updatedAt": "2026-10-22T07:48:17.657Z"
     }
   },
   "dismissed": {
