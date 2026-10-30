@@ -2,8 +2,6 @@
 theme = "charcoal-atelier"
 animations = false
 terminal_title = ["project"]
-screen_reader_detection_done = true
-model_availability_nux = {"gpt-5.5": 4, "gpt-6-astra": 4, "gpt-6.1-sol": 4}
 
 [desktop.appearanceDarkChromeTheme]
 accent = "#e05d3a"
