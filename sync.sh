@@ -93,6 +93,9 @@ $HOME/.config/herdr/config.toml	herdr/config.toml
 $HOME/.config/herdr/dayowl-theme.toml	herdr/dayowl-theme.toml
 $HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
 $HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
+$HOME/.config/herdr/charcoal-atelier-theme.toml	herdr/charcoal-atelier-theme.toml
+$HOME/.vscode/extensions/mmc.charcoal-atelier-1.0.0	vscode/charcoal-atelier
+$HOME/.cursor/extensions/mmc.charcoal-atelier-1.0.0	cursor/charcoal-atelier
 $HOME/.config/nvim	nvim
 $HOME/.vimrc	vim/vimrc
 $HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim

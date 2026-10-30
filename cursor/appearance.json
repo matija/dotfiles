@@ -1,4 +1,6 @@
 {
   "window.autoDetectColorScheme": false,
-  "workbench.preferredLightColorTheme": "Polar Aurora"
+  "workbench.colorTheme": "Charcoal Atelier",
+  "workbench.preferredDarkColorTheme": "Charcoal Atelier",
+  "workbench.preferredLightColorTheme": "Charcoal Atelier"
 }

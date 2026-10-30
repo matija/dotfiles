@@ -1,33 +1,35 @@
 onboarding = false
 
+
 [theme]
 name = "one-dark"
 
 auto_switch = false
+
 [theme.custom]
-panel_bg      = "#181818"
-sidebar_bg    = "#121212"
-active_row_bg = "#282828"
-selection_bg  = "#383838"
-surface0      = "#202020"
-surface1      = "#303030"
-surface_dim   = "#121212"
-overlay0      = "#666666"
-overlay1      = "#777777"
-text          = "#dedede"
-subtext0      = "#777777"
-accent        = "#92eebb"
-red           = "#de7d8c"
-green         = "#7bdca9"
-yellow        = "#e2c676"
-blue          = "#71a3e0"
-teal          = "#71cfd5"
-peach         = "#e5a178"
-mauve         = "#a28ae7"
+panel_bg      = "#161616"
+sidebar_bg    = "#1d1d1d"
+active_row_bg = "#262626"
+selection_bg  = "#3a3835"
+surface0      = "#252a23"
+surface1      = "#363635"
+surface_dim   = "#1d1d1d"
+overlay0      = "#706e6b"
+overlay1      = "#8f8c88"
+text          = "#d6d2cc"
+subtext0      = "#8f8c88"
+accent        = "#e05d3a"
+red           = "#d96a4d"
+green         = "#9aab84"
+yellow        = "#cfae7a"
+blue          = "#8aa0b4"
+teal          = "#8fafa8"
+peach         = "#cfae7a"
+mauve         = "#b193a8"
 
 [ui]
 show_agent_labels_on_pane_borders = true
-accent = "#92eebb"
+accent = "#e05d3a"
 # tmux drew single-line dividers between adjacent panes
 pane_gaps = false
 

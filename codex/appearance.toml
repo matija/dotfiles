@@ -1,12 +1,14 @@
 [tui]
-theme = "polar-aurora"
+theme = "charcoal-atelier"
 animations = false
 terminal_title = ["project"]
+screen_reader_detection_done = true
+model_availability_nux = {"gpt-5.5": 4, "gpt-6-astra": 4, "gpt-6.1-sol": 4}
 
 [desktop.appearanceDarkChromeTheme]
-accent = "#0169cc"
+accent = "#e05d3a"
 accentSource = "custom"
 contrast = 45
-ink = "#fcfcfc"
+ink = "#d6d2cc"
 opaqueWindows = false
-surface = "#111111"
+surface = "#161616"

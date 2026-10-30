@@ -1,0 +1,23 @@
+{
+  "name": "charcoal-atelier",
+  "displayName": "Charcoal Atelier",
+  "description": "Charcoal Atelier colour theme for VS Code and Cursor.",
+  "version": "1.0.0",
+  "publisher": "mmc",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Charcoal Atelier",
+        "uiTheme": "vs-dark",
+        "path": "./themes/charcoal-atelier-color-theme.json"
+      }
+    ]
+  }
+}

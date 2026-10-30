@@ -1,0 +1,26 @@
+
+[theme]
+name = "one-dark"
+
+auto_switch = false
+
+[theme.custom]
+panel_bg      = "#161616"
+sidebar_bg    = "#1d1d1d"
+active_row_bg = "#262626"
+selection_bg  = "#3a3835"
+surface0      = "#252a23"
+surface1      = "#363635"
+surface_dim   = "#1d1d1d"
+overlay0      = "#706e6b"
+overlay1      = "#8f8c88"
+text          = "#d6d2cc"
+subtext0      = "#8f8c88"
+accent        = "#e05d3a"
+red           = "#d96a4d"
+green         = "#9aab84"
+yellow        = "#cfae7a"
+blue          = "#8aa0b4"
+teal          = "#8fafa8"
+peach         = "#cfae7a"
+mauve         = "#b193a8"
