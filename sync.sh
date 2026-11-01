@@ -133,6 +133,12 @@ skipped=0
 while IFS=$'\t' read -r src dest; do
   [ -n "$src" ] || continue
 
+  if [ -e "$dest" ] && [ "$src" -ef "$dest" ]; then
+    echo "skip:  $src (linked to repo)"
+    skipped=$((skipped + 1))
+    continue
+  fi
+
   if [ -d "$src" ]; then
     if dir_emptyish "$src"; then
       echo "skip:  $src (no usable files)"
@@ -140,7 +146,7 @@ while IFS=$'\t' read -r src dest; do
       continue
     fi
     mkdir -p "$dest"
-    rsync -a --delete "${RSYNC_EXCLUDES[@]}" "$src"/ "$dest"/
+    rsync -aL --delete "${RSYNC_EXCLUDES[@]}" "$src"/ "$dest"/
   elif [ -f "$src" ]; then
     mkdir -p "$(dirname "$dest")"
     cp -p "$src" "$dest"

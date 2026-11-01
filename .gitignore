@@ -1,3 +1,6 @@
 /agents/mcp.json
 /agents/opencode.json
+/pi/auth.json
+/pi/models.json
+/pi/mcp.json
 __pycache__/

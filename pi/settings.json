@@ -1,0 +1,12 @@
+{
+  "lastChangelogVersion": "1.4.0",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-6.1-sol",
+  "defaultThinkingLevel": "low",
+  "packages": [
+    "npm:pi-web-access",
+    "npm:pi-context-usage"
+  ],
+  "theme": "charcoal-atelier",
+  "steeringMode": "one-at-a-time"
+}
