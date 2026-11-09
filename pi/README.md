@@ -16,10 +16,12 @@ The setup command links these paths to the repository:
 | Live path | Repository path |
 | --- | --- |
 | `~/.agents/AGENTS.md` | `agents/AGENTS.md` |
-| `~/.agents/skills` | `agents/skills` |
+| `~/.agents/skills/<name>` | `agents/skills/<name>` |
 | `~/.pi/agent/settings.json` | `pi/settings.json` |
 | `~/.pi/agent/extensions` | `pi/extensions` |
 | `~/.pi/agent/themes` | `pi/themes` |
+
+The shared skills directory stays local. Each repository skill links into it, so app-managed skills can coexist outside the repository.
 
 Pi's `AGENTS.md` and `skills` link to `~/.agents`. Pi's `mcp.json` links to the machine-local `~/.agents/mcp.json`, if present.
 

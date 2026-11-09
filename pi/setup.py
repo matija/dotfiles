@@ -15,7 +15,6 @@ backup = home / ".pi/backups" / datetime.now().strftime("%Y%m%d-%H%M%S-%f")
 
 links = {
     shared / "AGENTS.md": repo / "agents/AGENTS.md",
-    shared / "skills": repo / "agents/skills",
     agent / "AGENTS.md": shared / "AGENTS.md",
     agent / "skills": shared / "skills",
     agent / "settings.json": repo / "pi/settings.json",
@@ -28,6 +27,15 @@ if (shared / "mcp.json").exists() or (agent / "mcp.json").exists():
         shutil.copy2(agent / "mcp.json", shared / "mcp.json")
         (shared / "mcp.json").chmod(0o600)
     links[agent / "mcp.json"] = shared / "mcp.json"
+
+skills = shared / "skills"
+if skills.is_symlink():
+    saved = backup / skills.relative_to(home)
+    saved.parent.mkdir(parents=True, exist_ok=True)
+    skills.rename(saved)
+    print(f"backup: {saved}")
+skills.mkdir(parents=True, exist_ok=True)
+links.update({skills / source.name: source for source in (repo / "agents/skills").iterdir() if source.is_dir()})
 
 for target, source in links.items():
     if target.is_symlink() and target.readlink() == source:
