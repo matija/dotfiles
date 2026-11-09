@@ -4,7 +4,7 @@ filetype plugin indent on
 
 set termguicolors
 set background=dark
-colorscheme polar-aurora
+colorscheme charcoal-atelier
 
 set clipboard^=unnamedplus,unnamed
 set encoding=utf-8

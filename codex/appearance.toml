@@ -3,10 +3,18 @@ theme = "charcoal-atelier"
 animations = false
 terminal_title = ["project"]
 
+[desktop]
+appearanceTheme = "dark"
+
 [desktop.appearanceDarkChromeTheme]
 accent = "#e05d3a"
 accentSource = "custom"
 contrast = 45
 ink = "#d6d2cc"
-opaqueWindows = false
+opaqueWindows = true
 surface = "#161616"
+
+[desktop.appearanceDarkChromeTheme.semanticColors]
+diffAdded = "#9aab84"
+diffRemoved = "#d96a4d"
+skill = "#b193a8"

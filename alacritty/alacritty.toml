@@ -1,33 +1,36 @@
-# Rosé Pine Moon
 [colors.primary]
-background = "#232136"
-foreground = "#e0def4"
-bright_foreground = "#e0def4"
-dim_foreground = "#6e6a86"
+background = "#161616"
+foreground = "#d6d2cc"
+bright_foreground = "#efece7"
+dim_foreground = "#8f8c88"
 
 [colors.cursor]
-cursor = "#e0def4"
-text = "#232136"
+cursor = "#e05d3a"
+text = "#161616"
+
+[colors.selection]
+background = "#3a3835"
+text = "#efece7"
 
 [colors.normal]
-black = "#2a273f"
-red = "#eb6f92"
-green = "#95b1ac"
-yellow = "#f6c177"
-blue = "#3e8fb0"
-magenta = "#c4a7e7"
-cyan = "#9ccfd8"
-white = "#908caa"
+black = "#222222"
+red = "#d96a4d"
+green = "#9aab84"
+yellow = "#cfae7a"
+blue = "#8aa0b4"
+magenta = "#b193a8"
+cyan = "#8fafa8"
+white = "#b5b1ab"
 
 [colors.bright]
-black = "#393552"
-red = "#eb6f92"
-green = "#95b1ac"
-yellow = "#f6c177"
-blue = "#3e8fb0"
-magenta = "#c4a7e7"
-cyan = "#9ccfd8"
-white = "#e0def4"
+black = "#5f5c58"
+red = "#e8886e"
+green = "#b3c39d"
+yellow = "#e0c493"
+blue = "#a4b9cc"
+magenta = "#c8adc0"
+cyan = "#a8c7c0"
+white = "#efece7"
 
 [window]
 decorations = "none"

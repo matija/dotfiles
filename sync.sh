@@ -99,6 +99,7 @@ $HOME/.cursor/extensions/mmc.charcoal-atelier-1.0.0	cursor/charcoal-atelier
 $HOME/.config/nvim	nvim
 $HOME/.vimrc	vim/vimrc
 $HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim
+$HOME/.vim/colors/charcoal-atelier.vim	vim/colors/charcoal-atelier.vim
 $HOME/.vscode/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	vscode/polar-aurora/themes/polar-aurora-color-theme.json
 $HOME/.cursor/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	cursor/polar-aurora/themes/polar-aurora-color-theme.json
 $HOME/.config/opencode/cli.json	opencode/cli.json
@@ -173,9 +174,15 @@ config = tomllib.loads((Path.home() / '.codex/config.toml').read_text())
 tui = config.get('tui', {})
 keys = ('theme', 'animations', 'terminal_title')
 appearance = '[tui]\n' + ''.join(f'{key} = {json.dumps(tui[key])}\n' for key in keys if key in tui)
-dark = config.get('desktop', {}).get('appearanceDarkChromeTheme', {})
+desktop = config.get('desktop', {})
+if 'appearanceTheme' in desktop:
+    appearance += '\n[desktop]\nappearanceTheme = ' + json.dumps(desktop['appearanceTheme']) + '\n'
+dark = desktop.get('appearanceDarkChromeTheme', {})
 if dark:
     appearance += '\n[desktop.appearanceDarkChromeTheme]\n' + ''.join(f'{key} = {json.dumps(dark[key])}\n' for key in ('accent', 'accentSource', 'contrast', 'ink', 'opaqueWindows', 'surface') if key in dark)
+    semantic = dark.get('semanticColors', {})
+    if semantic:
+        appearance += '\n[desktop.appearanceDarkChromeTheme.semanticColors]\n' + ''.join(f'{key} = {json.dumps(value)}\n' for key, value in semantic.items())
 Path('codex/appearance.toml').write_text(appearance)
 PY
 fi
