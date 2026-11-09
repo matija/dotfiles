@@ -20,8 +20,7 @@ End any turn that reports on long-running or delegated work with a short status:
 
 ## Browser checks
 
-Use Ego Lite for browser testing and visual checks of websites. Read
-`~/.agents/skills/ego-browser/SKILL.md` before browser work. Check desktop
+Use Ego Lite for browser testing and visual checks of websites. Check desktop
 applications in their native app. Never install Playwright or its browser binaries.
 When done using Ego, kill it.
 

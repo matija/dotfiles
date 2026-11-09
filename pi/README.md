@@ -58,6 +58,6 @@ Replace the example path with the files you changed. On the other machine, recei
 
 ## Machine-specific integrations
 
-The repository contains an Ego skill snapshot, not a link into a Mac installation. Ego, Rex, and Esploro applications require separate installation.
+Ego, Rex, and Esploro applications require separate installation.
 
 Shared extensions load on both machines. Esploro connects only when you request it. Machine-specific credentials remain local.
