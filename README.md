@@ -7,6 +7,8 @@ Includes agent skills, rules, extensions, and themes for AI tools, VS Code, and 
 
 [Pi setup and two-way synchronization](pi/README.md) use symlinks to this checkout.
 
+[Codex Jev alerts](codex/README.md) use shared Pi reviewers and show warnings during work and after each turn.
+
 Charcoal Atelier follows the palette bundled in Rex Beta: `#161616` background, `#d6d2cc` text, and `#e05d3a` accent.
 The exact Rex theme is saved in `themes/charcoal-atelier.json`.
 
