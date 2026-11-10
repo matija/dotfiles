@@ -15,6 +15,7 @@ const clean = (value) => value.replace(/[\u0000-\u001f\u007f-\u009f]/g, " ").tri
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 const enabled = () => settings.enabled && !existsSync(disabled);
 const emit = (output = {}) => console.log(JSON.stringify(output));
+const warning = (title, message) => `⚠ JEV — ${title}\n\n${clean(message)}`;
 
 function text(value) {
   if (typeof value === "string") {
@@ -145,7 +146,7 @@ async function hook(input) {
       probability: result.decision.probability, category: result.decision.category, usage: result.usage };
     if (!enabled()) return emit();
     writeFileSync(statePath, JSON.stringify(state), { mode: 0o600 });
-    const output = note ? { systemMessage: `Jev: ${note}` } : {};
+    const output = note ? { systemMessage: warning("REVIEW REQUIRED", note) } : {};
     // if (final && note && !input.stop_hook_active) {
     //   output.decision = "block";
     //   output.reason = note;
@@ -172,7 +173,7 @@ async function main() {
     const { TEST_TRANSCRIPT } = await import("../../pi/extensions/you-should-know/test-scenario.ts");
     const result = await review(TEST_TRANSCRIPT, "", AbortSignal.timeout(40_000));
     if (!result.note) throw new Error("The live self-test did not produce a warning.");
-    emit({ systemMessage: `Jev self-test: ${result.note}`, probability: result.decision.probability });
+    emit({ systemMessage: warning("SELF-TEST WARNING", result.note), probability: result.decision.probability });
     return;
   }
   if (action) throw new Error("Use codex-jev on, off, status, or test.");
@@ -182,6 +183,6 @@ async function main() {
 main().catch((error) => {
   const detail = /^(TYPESAFE_API_KEY|Jev HTTP|Jev returned|openai-codex\/gpt-6-luna|Luna failed|No readable Codex|The Codex session|The previous Jev|The live self-test|Use codex-jev)/.test(error.message || "")
     ? ` ${clean(error.message)}` : " Check Pi credentials, Node.js 24, and provider connectivity.";
-  emit({ systemMessage: `Jev review unavailable. No verification result was produced.${detail}` });
+  emit({ systemMessage: warning("REVIEW UNAVAILABLE", `No verification result was produced.${detail}`) });
   if (process.argv[2]) process.exitCode = 1;
 });
