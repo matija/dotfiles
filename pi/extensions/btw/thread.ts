@@ -52,7 +52,7 @@ export class SideChat {
 				submit: (text) => { void this.ask(ctx, text); }, cancel: () => this.cancel() });
 		}
 		if (question.trim()) await this.ask(ctx, question.trim());
-		else if (ctx.mode !== "tui") ctx.ui.notify(`Usage: /${this.key === "ysk" ? "ysk-chat" : "btw"} <question>`, "warning");
+		else if (ctx.mode !== "tui") ctx.ui.notify("Usage: /btw <question>", "warning");
 	}
 	private transcript() {
 		const messages = this.turns.filter((t) => t.id === this.spec?.id).flatMap((t) => t.messages);
