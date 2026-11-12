@@ -36,64 +36,11 @@ while [ $# -gt 0 ]; do
   shift
 done
 
-if [ -f "$HOME/.agents/mcp.json" ]; then
-  python3 - <<'PY'
-import json, os
-from pathlib import Path
-root = Path.home() / '.agents'
-servers = {}
-for name, source in json.loads((root / 'mcp.json').read_text()).get('mcpServers', {}).items():
-    server = {'type': 'remote' if 'url' in source else 'local'}
-    if 'url' in source:
-        server['url'] = source['url']
-        if 'headers' in source:
-            server['headers'] = source['headers']
-            server['oauth'] = False
-    else:
-        server['command'] = [source['command'], *source.get('args', [])]
-        if 'env' in source:
-            server['environment'] = source['env']
-        if 'cwd' in source:
-            server['cwd'] = source['cwd']
-    server['disabled'] = source.get('disabled', not source.get('enabled', True))
-    servers[name] = server
-target = root / 'opencode.json'
-config = json.loads(target.read_text()) if target.exists() else {}
-config.setdefault('mcp', {})['servers'] = servers
-fd = os.open(target, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
-with os.fdopen(fd, 'w') as output:
-    json.dump(config, output, indent=2)
-    output.write('\n')
-target.chmod(0o600)
-PY
-fi
-
-mkdir -p "$HOME/.config/opencode" opencode
-for name in AGENTS.md skills opencode.json; do
-  live="$HOME/.config/opencode/$name"
-  if [ ! -e "$HOME/.agents/$name" ]; then
-    continue
-  fi
-  if [ -e "$live" ] && [ ! -L "$live" ]; then
-    echo "Refusing to replace existing config: $live" >&2
-    exit 1
-  fi
-  ln -sfn "../../.agents/$name" "$live"
-  ln -sfn "../agents/$name" "opencode/$name"
-done
-
 # src <TAB> dest (relative to repo root). Files are copied, dirs are mirrored.
 SYNC_PAIRS=$(
   cat <<EOF
 $HOME/.bashrc	.bashrc
 $HOME/.tmux.conf	.tmux.conf
-$HOME/.config/alacritty	alacritty
-$HOME/.config/ghostty	ghostty
-$HOME/.config/herdr/config.toml	herdr/config.toml
-$HOME/.config/herdr/dayowl-theme.toml	herdr/dayowl-theme.toml
-$HOME/.config/herdr/nightowl-theme.toml	herdr/nightowl-theme.toml
-$HOME/.config/herdr/polar-aurora-theme.toml	herdr/polar-aurora-theme.toml
-$HOME/.config/herdr/charcoal-atelier-theme.toml	herdr/charcoal-atelier-theme.toml
 $HOME/.vscode/extensions/mmc.charcoal-atelier-1.0.0	vscode/charcoal-atelier
 $HOME/.cursor/extensions/mmc.charcoal-atelier-1.0.0	cursor/charcoal-atelier
 $HOME/.config/nvim	nvim
@@ -102,8 +49,6 @@ $HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim
 $HOME/.vim/colors/charcoal-atelier.vim	vim/colors/charcoal-atelier.vim
 $HOME/.vscode/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	vscode/polar-aurora/themes/polar-aurora-color-theme.json
 $HOME/.cursor/extensions/mmc.polar-aurora-1.0.0/themes/polar-aurora-color-theme.json	cursor/polar-aurora/themes/polar-aurora-color-theme.json
-$HOME/.config/opencode/cli.json	opencode/cli.json
-$HOME/.config/opencode/themes	opencode/themes
 $HOME/.agents	agents
 $HOME/.cursor/rules	cursor/rules
 $HOME/.claude/themes	claude/themes

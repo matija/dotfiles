@@ -1,7 +1,7 @@
 # Dotfiles
 
-Personal configs for Neovim, Vim, Bash, Zsh, tmux, Alacritty, Ghostty, and herdr.
-Includes agent skills, rules, extensions, and themes for AI tools, VS Code, and Waterfox.
+Personal configs for Neovim, Vim, Bash, Zsh, and tmux.
+Includes agent skills, rules, extensions, and themes for AI tools and VS Code.
 
 `sync.sh` copies live configs into this repo.
 
