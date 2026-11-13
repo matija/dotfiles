@@ -26,6 +26,7 @@ Light is the current default. Text colors use darker shades for contrast on ligh
 | Codex CLI | `funky-fresh-light` | `funky-fresh-dark` |
 | Claude Code | `custom:funky-fresh-light` | `custom:funky-fresh-dark` |
 | Cursor and VS Code | `Funky Fresh Light` | `Funky Fresh Dark` |
+| Zed | `Funky Fresh Light` | `Funky Fresh Dark` |
 
 Cursor Agent uses the terminal's colors, not a custom theme file.
 The Ghostty themes in `cursor-agent/themes/` supply matching terminal colors.

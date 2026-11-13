@@ -47,6 +47,7 @@ $HOME/.vscode/extensions/mmc.funky-fresh-1.0.0	vscode/funky-fresh
 $HOME/.cursor/extensions/mmc.funky-fresh-1.0.0	cursor/funky-fresh
 $HOME/.config/ghostty/themes/funky-fresh-light	cursor-agent/themes/funky-fresh-light
 $HOME/.config/ghostty/themes/funky-fresh-dark	cursor-agent/themes/funky-fresh-dark
+$HOME/.config/zed/themes/funky-fresh.json	zed/themes/funky-fresh.json
 $HOME/.config/nvim	nvim
 $HOME/.vimrc	vim/vimrc
 $HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim
