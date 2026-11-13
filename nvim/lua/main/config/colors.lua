@@ -1,1 +1,1 @@
-vim.cmd [[ colorscheme charcoal-atelier ]]
+vim.cmd [[ colorscheme funky-fresh-light ]]

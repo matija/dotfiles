@@ -7,6 +7,6 @@
     "npm:pi-web-access",
     "npm:pi-context-usage"
   ],
-  "theme": "charcoal-atelier",
+  "theme": "funky-fresh-light",
   "steeringMode": "one-at-a-time"
 }

@@ -1,5 +1,5 @@
 [tui]
-theme = "charcoal-atelier"
+theme = "funky-fresh-light"
 animations = false
 terminal_title = ["project"]
 

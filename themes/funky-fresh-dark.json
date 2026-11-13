@@ -1,0 +1,32 @@
+{
+  "name": "Funky Fresh Dark",
+  "appearance": "dark",
+  "slack": [
+    "#BEB0FF",
+    "#71D18F",
+    "#00FF50",
+    "#CDC8E8"
+  ],
+  "background": "#1d172c",
+  "foreground": "#eee9fb",
+  "accent": "#beb0ff",
+  "selection": "#51416e",
+  "ansi": [
+    "#2c2440",
+    "#ff8ba7",
+    "#71d18f",
+    "#e9cd83",
+    "#beb0ff",
+    "#d5a6ee",
+    "#8cdbc7",
+    "#cdc8e8",
+    "#817393",
+    "#ffa9be",
+    "#95e9ae",
+    "#f5deaa",
+    "#d4caff",
+    "#e4c4f5",
+    "#a5edda",
+    "#faf7ff"
+  ]
+}

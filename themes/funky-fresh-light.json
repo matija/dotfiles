@@ -1,0 +1,32 @@
+{
+  "name": "Funky Fresh Light",
+  "appearance": "light",
+  "slack": [
+    "#BEB0FF",
+    "#71D18F",
+    "#00FF50",
+    "#CDC8E8"
+  ],
+  "background": "#faf8ff",
+  "foreground": "#29223e",
+  "accent": "#6245a5",
+  "selection": "#d9cef9",
+  "ansi": [
+    "#e9e2ff",
+    "#ad294b",
+    "#216b3b",
+    "#805700",
+    "#6245a5",
+    "#793f94",
+    "#176961",
+    "#4d425f",
+    "#83768f",
+    "#94213e",
+    "#175c30",
+    "#6c4900",
+    "#513491",
+    "#68327e",
+    "#15594f",
+    "#211a35"
+  ]
+}
