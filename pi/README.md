@@ -58,6 +58,14 @@ Replace the example path with the files you changed. On the other machine, recei
 
 `sync.sh` still imports unrelated application configuration. It skips paths that already link to their repository targets and copies shared agent links as file contents.
 
+## Reply style
+
+`pi/extensions/reply-style/index.ts` adds colored bold text, status pills, and label icons to assistant replies in the terminal.
+Its style guide uses 71 tokens with the `o200k_base` and `cl100k_base` tokenizers, or 79 tokens with the section tags.
+Other modes receive no style guide. The extension leaves stored messages unchanged.
+
+After a change to the extension, run `/reload` in Pi.
+
 ## Machine-specific integrations
 
 Ego, Rex, and Esploro applications require separate installation.
