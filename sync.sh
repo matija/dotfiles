@@ -48,6 +48,9 @@ $HOME/.cursor/extensions/mmc.funky-fresh-1.0.0	cursor/funky-fresh
 $HOME/.config/ghostty/themes/funky-fresh-light	cursor-agent/themes/funky-fresh-light
 $HOME/.config/ghostty/themes/funky-fresh-dark	cursor-agent/themes/funky-fresh-dark
 $HOME/.config/zed/themes/funky-fresh.json	zed/themes/funky-fresh.json
+$HOME/.config/ghostty/themes/funky-fresh-light	rex/themes/funky-fresh-light
+$HOME/.config/ghostty/themes/funky-fresh-dark	rex/themes/funky-fresh-dark
+$HOME/.config/rex/init.lua	rex/init.lua
 $HOME/.config/nvim	nvim
 $HOME/.vimrc	vim/vimrc
 $HOME/.vim/colors/polar-aurora.vim	vim/colors/polar-aurora.vim
@@ -169,6 +172,10 @@ PY
 
 echo
 echo "synced $synced source(s), skipped $skipped."
+
+if [ -f "$HOME/Library/Preferences/com.superlogical.rex.plist" ]; then
+  python3 "$REPO_DIR/rex/sync-settings.py"
+fi
 
 if [ "$(git status --porcelain | wc -l | tr -d ' ')" -eq 0 ]; then
   echo "No changes to commit."
