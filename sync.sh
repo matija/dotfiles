@@ -79,6 +79,17 @@ dir_emptyish() {
   [ "$real" -eq 0 ]
 }
 
+if [ -f "$HOME/.agents/AGENTS.md" ]; then
+  mkdir -p "$HOME/.cursor/rules"
+  python3 - <<'PY'
+from pathlib import Path
+home = Path.home()
+source = home / '.agents/AGENTS.md'
+target = home / '.cursor/rules/agent-instructions.mdc'
+target.write_text('---\ndescription: Shared agent instructions\nalwaysApply: true\n---\n\n' + source.read_text())
+PY
+fi
+
 synced=0
 skipped=0
 while IFS=$'\t' read -r src dest; do
@@ -112,7 +123,11 @@ done <<< "$SYNC_PAIRS"
 
 if [ -f "$HOME/.zshrc" ]; then
   mkdir -p zsh
-  sed -n -e '/^autoload -Uz vcs_info$/p' -e '/^precmd() { vcs_info; PROMPT=/p' -e "/^zstyle ':vcs_info:git:\*' formats /p" -e '/^unsetopt PROMPT_SUBST$/p' "$HOME/.zshrc" > zsh/prompt.zsh
+  awk '
+    /^precmd\(\) \{/ { in_precmd = 1 }
+    in_precmd { print; if ($0 ~ /^}/ || $0 ~ /} *$/) in_precmd = 0; next }
+    /^autoload -Uz vcs_info$/ || /^zstyle '\'':vcs_info:git:\*'\'' / || /^unsetopt PROMPT_SUBST$/ { print }
+  ' "$HOME/.zshrc" > zsh/prompt.zsh
 fi
 
 if [ -f "$HOME/.codex/config.toml" ]; then

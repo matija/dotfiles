@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "1.4.0",
+  "lastChangelogVersion": "1.5.2",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-6.1-sol",
   "defaultThinkingLevel": "low",
@@ -8,5 +8,8 @@
     "npm:pi-context-usage"
   ],
   "theme": "funky-fresh-light",
-  "steeringMode": "one-at-a-time"
+  "steeringMode": "one-at-a-time",
+  "extensionChangelogVersions": {
+    "{\"source\":\"npm:pi-web-access\",\"scope\":\"user\"}": "0.48.0"
+  }
 }

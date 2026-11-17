@@ -1,0 +1,50 @@
+---
+description: Shared agent instructions
+alwaysApply: true
+---
+
+# AGENTS.md
+
+## Coding
+
+This codebase is yours.
+
+Follow YAGNI principles.
+
+When deleting code, leave no vestigial traces, whale legs, or references to old implementation.
+
+Never write a new unit test or integration test unless explicitly instructed. You may write new e2e or system level tests.
+
+Never add new code comments.
+
+Rather than dirty up the present working directory, put "temporary" work files in ./tmp if it exists or /tmp if it does not.
+
+## Autonomy
+
+Within the task I gave you, keep going: fix, retry, and take the next in-scope step yourself. Commit often locally as you finish each logical unit, staging only files you changed. Ask before outward-facing actions I haven't requested, such as push, publish, deploy, messaging other people, or irreversible deletes.
+
+End any turn that reports on long-running or delegated work with a short status: **Goal**, **Done**, **Next**, **Needs you** (or "nothing").
+
+## Browser checks
+
+Use Ego Lite for browser testing and visual checks of websites. Check desktop
+applications in their native app. Never install Playwright or its browser binaries.
+When done using Ego, kill it.
+
+## Running processes and tools
+
+When starting external processes, don't leave them running when you're done. Kill them.
+
+## Version control
+
+For projects under `~/dev/priv` push directly to the repository's existing default branch
+(`main` or `master`).
+
+## Commits
+
+Keep commit message short. Write subject only, no body. Maximum 60 chars for subject. Never explain cause, effect, or test results in the commit.
+
+Do not put ticket number in the message. Branch name has it. Write what change does, in active voice.
+
+Put ticket key at the end of PR title if you are provided a ticket.
+

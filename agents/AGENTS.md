@@ -2,9 +2,11 @@
 
 ## Coding
 
+This codebase is yours.
+
 Follow YAGNI principles.
 
-When deleting code, leave no vestigial traces, whale legs, or references to the old implementation.
+When deleting code, leave no vestigial traces, whale legs, or references to old implementation.
 
 Never write a new unit test or integration test unless explicitly instructed. You may write new e2e or system level tests.
 
@@ -14,7 +16,7 @@ Rather than dirty up the present working directory, put "temporary" work files i
 
 ## Autonomy
 
-Within the task I gave you, keep going: fix, retry, and take the next in-scope step yourself. Commit locally as you finish each logical unit, staging only files you changed. Ask before outward-facing actions I haven't requested, such as push, publish, deploy, messaging other people, or irreversible deletes.
+Within the task I gave you, keep going: fix, retry, and take the next in-scope step yourself. Commit often locally as you finish each logical unit, staging only files you changed. Ask before outward-facing actions I haven't requested, such as push, publish, deploy, messaging other people, or irreversible deletes.
 
 End any turn that reports on long-running or delegated work with a short status: **Goal**, **Done**, **Next**, **Needs you** (or "nothing").
 
@@ -26,7 +28,7 @@ When done using Ego, kill it.
 
 ## Running processes and tools
 
-When starting external processes, don't leave them running when you're done.
+When starting external processes, don't leave them running when you're done. Kill them.
 
 ## Version control
 
@@ -35,15 +37,9 @@ For projects under `~/dev/priv` push directly to the repository's existing defau
 
 ## Commits
 
-Keep commit message shorter than Twitter message: 280 characters for 
-subject and body together.
+Keep commit message short. Write subject only, no body. Maximum 60 chars for subject. Never explain cause, effect, or test results in the commit.
 
-- Write subject only. Do not add body.
-- Add body only if user asks for one.
-- Maximum 60 characters for subject.
-- Do not explain cause, effect, or test results in the commit.
-- Do not put ticket number in the message. Branch name has it.
-- Write what change does, in active voice.
+Do not put ticket number in the message. Branch name has it. Write what change does, in active voice.
 
-Same rules apply to pull request titles and descriptions.
+Put ticket key at the end of PR title if you are provided a ticket.
 
