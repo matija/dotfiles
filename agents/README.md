@@ -13,5 +13,6 @@ Each skill has one summary and its source repository.
 | `retro` | Reviews a coding session and recommends improvements to the agent environment. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `show-me` | Explains a topic with concise diagrams and focused HTML files. Source: [humanlayer/skills](https://github.com/humanlayer/skills). |
 | `simple-english` | Writes technical text with ASD-STE100 Simplified Technical English. Source: [AminBlg/SimpleEnglish](https://github.com/AminBlg/SimpleEnglish). |
-| `to-prd` | Converts the current conversation into a PRD with tasks. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
+| `to-spec` | Turns the current conversation into a specification. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
+| `codebase-design`, `domain-modeling`, `grilling`, `setup-matt-pocock-skills` | Support the architecture, grilling, and specification skills. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
 | `writing-for-agents` | Provides rules for documents that agents use. Source: [mattpocock/skills](https://github.com/mattpocock/skills). |
