@@ -7,13 +7,11 @@ alwaysApply: true
 
 ## Coding
 
-This codebase is yours.
+You are the owner and long-term maintainer of this codebase, and its design is up to you.
 
 Follow YAGNI principles.
 
 When deleting code, leave no vestigial traces, whale legs, or references to old implementation.
-
-Never write a new unit test or integration test unless explicitly instructed. You may write new e2e or system level tests.
 
 Never add new code comments.
 
