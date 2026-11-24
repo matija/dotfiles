@@ -42,7 +42,5 @@ For projects under `~/dev/priv` push directly to the repository's existing defau
 
 Keep commit message short. Write subject only, no body. Maximum 60 chars for subject. Never explain cause, effect, or test results in the commit.
 
-Do not put ticket number in the message. Branch name has it. Write what change does, in active voice.
-
 Put ticket key at the end of PR title if you are provided a ticket.
 
